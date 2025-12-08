@@ -1,0 +1,44 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Slide Deck - Title Alignment Fix
+   v0.1.5 - Surgical fix to align title text with bullet text
+   
+   Problem: Title starts at 60px, bullet text starts at ~105px
+   Fix: Indent title to match bullet text start position
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Content Slide - Title Alignment
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.theme-blackhat .bh-content-slide .bh-heading {
+    /* Match the bullet text indent: 60px body + 45px bullet = 105px */
+    padding-left: 105px !important;
+    
+    /* Underline should also start at same position */
+    margin-left: 60px !important;
+    margin-right: 60px !important;
+    padding-right: 0 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Comparison Slide - Same Treatment
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.theme-blackhat .bh-comparison-slide .bh-heading {
+    padding-left: 105px !important;
+    margin-left: 60px !important;
+    margin-right: 60px !important;
+    padding-right: 0 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Print - Maintain Alignment
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+@media print {
+    .theme-blackhat .bh-content-slide .bh-heading,
+    .theme-blackhat .bh-comparison-slide .bh-heading {
+        padding-left: 100px !important;
+        margin-left: 55px !important;
+    }
+}

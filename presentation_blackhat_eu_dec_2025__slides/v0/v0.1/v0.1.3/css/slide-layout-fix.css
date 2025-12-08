@@ -1,0 +1,228 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Slide Deck - Improved Slide Layout
+   v0.1.3 - Surgical fix for consistent title positioning and typography hierarchy
+
+   Fixes:
+   - Title positioned too high
+   - Title/content visual hierarchy weak
+   - Inconsistent positioning across slides
+   - No content-based font scaling
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Content Slide - CSS Grid Layout with Fixed Zones
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.theme-blackhat .bh-content-slide {
+    display: grid !important;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "content"
+        "footer";
+    padding: 0 !important;
+    align-items: stretch !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Header Zone - Fixed Position for Title
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.theme-blackhat .bh-content-slide .bh-heading {
+    grid-area: header;
+
+    /* Fixed positioning from top */
+    padding: 50px 60px 0 60px;
+    margin: 0 0 20px 0 !important;
+
+    /* Stronger visual hierarchy */
+    font-size: clamp(32px, 5vw, 48px) !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.02em;
+
+    /* Accent underline for emphasis */
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--bh-magenta);
+
+    /* Ensure consistent width */
+    width: auto !important;
+    margin-right: 60px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Content Zone - Flexible with Auto-scaling
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.theme-blackhat .bh-content-slide .bh-body {
+    grid-area: content;
+    padding: 25px 60px 20px 60px;
+    overflow: hidden;
+
+    /* Flexbox for vertical distribution */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Footer Zone - Logo Area
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.theme-blackhat .bh-content-slide .bh-corner-logo {
+    grid-area: footer;
+    position: relative !important;
+    justify-self: end;
+    align-self: end;
+    margin: 0 30px 20px 0;
+    bottom: auto !important;
+    right: auto !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Typography Hierarchy - Better Differentiation
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* Level 1 bullets - Primary content */
+.theme-blackhat .bh-level-1 > li {
+    font-size: clamp(22px, 3.5vw, 32px) !important;
+    line-height: 1.4 !important;
+    padding: 8px 0 8px 45px !important;
+    margin-bottom: 8px;
+}
+
+.theme-blackhat .bh-level-1 > li::before {
+    font-size: clamp(28px, 4vw, 40px) !important;
+    top: 12px !important;
+}
+
+/* Level 2 bullets - Secondary content */
+.theme-blackhat .bh-level-2 {
+    margin: 4px 0 4px 45px !important;
+}
+
+.theme-blackhat .bh-level-2 > li {
+    font-size: clamp(18px, 2.8vw, 26px) !important;
+    padding: 4px 0 4px 35px !important;
+    line-height: 1.35 !important;
+}
+
+.theme-blackhat .bh-level-2 > li::before {
+    font-size: clamp(14px, 2vw, 18px) !important;
+    top: 12px !important;
+}
+
+/* Level 3+ bullets - Tertiary content */
+.theme-blackhat .bh-level-3 > li {
+    font-size: clamp(16px, 2.2vw, 22px) !important;
+    line-height: 1.3 !important;
+}
+
+.theme-blackhat .bh-level-4 > li,
+.theme-blackhat .bh-level-5 > li {
+    font-size: clamp(14px, 1.8vw, 18px) !important;
+    line-height: 1.3 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Content Density Classes - Apply via data attribute or class
+   Usage: Add data-density="light|normal|heavy" to slide JSON
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* Light content (1-3 bullets, no nesting) - Larger fonts, more breathing room */
+.theme-blackhat .bh-content-slide[data-density="light"] .bh-level-1 > li,
+.theme-blackhat .bh-content-slide.density-light .bh-level-1 > li {
+    font-size: clamp(28px, 4.5vw, 40px) !important;
+    padding: 16px 0 16px 50px !important;
+    line-height: 1.5 !important;
+}
+
+.theme-blackhat .bh-content-slide[data-density="light"] .bh-level-1 > li::before,
+.theme-blackhat .bh-content-slide.density-light .bh-level-1 > li::before {
+    font-size: 48px !important;
+    top: 20px !important;
+}
+
+/* Heavy content (5+ bullets or deep nesting) - Compact fonts */
+.theme-blackhat .bh-content-slide[data-density="heavy"] .bh-level-1 > li,
+.theme-blackhat .bh-content-slide.density-heavy .bh-level-1 > li {
+    font-size: clamp(18px, 2.8vw, 26px) !important;
+    padding: 5px 0 5px 40px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 4px;
+}
+
+.theme-blackhat .bh-content-slide[data-density="heavy"] .bh-level-1 > li::before,
+.theme-blackhat .bh-content-slide.density-heavy .bh-level-1 > li::before {
+    font-size: 32px !important;
+    top: 8px !important;
+}
+
+.theme-blackhat .bh-content-slide[data-density="heavy"] .bh-level-2 > li,
+.theme-blackhat .bh-content-slide.density-heavy .bh-level-2 > li {
+    font-size: clamp(15px, 2.2vw, 20px) !important;
+    padding: 3px 0 3px 30px !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Comparison Slide - Same Grid Treatment
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.theme-blackhat .bh-comparison-slide {
+    display: grid !important;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "content"
+        "footer";
+    padding: 0 !important;
+}
+
+.theme-blackhat .bh-comparison-slide .bh-heading {
+    grid-area: header;
+    padding: 50px 60px 0 60px;
+    margin: 0 0 20px 0 !important;
+    font-size: clamp(32px, 5vw, 48px) !important;
+    font-weight: 800 !important;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--bh-magenta);
+    margin-right: 60px;
+}
+
+.theme-blackhat .bh-comparison-slide .bh-comparison-grid {
+    grid-area: content;
+    margin: 0 60px;
+    gap: 40px;
+}
+
+.theme-blackhat .bh-comparison-slide .bh-corner-logo {
+    grid-area: footer;
+    position: relative !important;
+    justify-self: end;
+    margin: 20px 30px 20px 0;
+    bottom: auto !important;
+    right: auto !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Print Adjustments - Maintain layout in PDF
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+@media print {
+    .theme-blackhat .bh-content-slide {
+        display: grid !important;
+        grid-template-rows: auto 1fr auto !important;
+    }
+
+    .theme-blackhat .bh-content-slide .bh-heading {
+        font-size: 42px !important;
+        padding: 45px 55px 12px 55px !important;
+    }
+
+    .theme-blackhat .bh-level-1 > li {
+        font-size: 26px !important;
+    }
+
+    .theme-blackhat .bh-level-2 > li {
+        font-size: 20px !important;
+    }
+}

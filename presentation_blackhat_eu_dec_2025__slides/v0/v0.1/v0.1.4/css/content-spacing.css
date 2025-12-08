@@ -1,0 +1,201 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Slide Deck - Content Area Vertical Distribution
+   v0.1.4 - Surgical fix for content zone spacing and centering
+   
+   Fixes:
+   - Content bunched at top with empty space below
+   - No vertical distribution of bullet items
+   - Light content doesn't expand to fill space
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Content Zone - Vertical Centering
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.theme-blackhat .bh-content-slide .bh-body {
+    /* Center content block vertically in the zone */
+    /*justify-content: center !important;*/
+    
+    /* Add some max-height breathing room */
+    padding-top: 30px !important;
+    padding-bottom: 40px !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Bullet Lists - Better Vertical Spacing
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* Level 1 bullets - More generous spacing */
+.theme-blackhat .bh-level-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 0;  /* We'll use padding on items instead for more control */
+}
+
+.theme-blackhat .bh-level-1 > li {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    margin-bottom: 0 !important;
+}
+
+/* Level 2 bullets - Tighter to parent */
+.theme-blackhat .bh-level-2 {
+    margin-top: 6px !important;
+    margin-bottom: 0 !important;
+}
+
+.theme-blackhat .bh-level-2 > li {
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Density: Light - Expand to Fill Space
+   For slides with ≤4 simple bullets
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.theme-blackhat .bh-content-slide.density-light .bh-body {
+    /*justify-content: center !important;*/
+}
+
+.theme-blackhat .bh-content-slide.density-light .bh-level-1 {
+    gap: 0;
+}
+
+.theme-blackhat .bh-content-slide.density-light .bh-level-1 > li {
+    font-size: clamp(28px, 4vw, 38px) !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    line-height: 1.4 !important;
+}
+
+.theme-blackhat .bh-content-slide.density-light .bh-level-1 > li::before {
+    font-size: 44px !important;
+    top: 24px !important;
+}
+
+.theme-blackhat .bh-content-slide.density-light .bh-level-2 > li {
+    font-size: clamp(22px, 3vw, 30px) !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Density: Normal - Balanced Distribution
+   For slides with 4-6 items, light nesting
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.theme-blackhat .bh-content-slide.density-normal .bh-body {
+    /*justify-content: center !important;*/
+}
+
+.theme-blackhat .bh-content-slide.density-normal .bh-level-1 > li {
+    font-size: clamp(24px, 3.5vw, 32px) !important;
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+    line-height: 1.35 !important;
+}
+
+.theme-blackhat .bh-content-slide.density-normal .bh-level-1 > li::before {
+    font-size: 38px !important;
+    top: 18px !important;
+}
+
+.theme-blackhat .bh-content-slide.density-normal .bh-level-2 > li {
+    font-size: clamp(18px, 2.5vw, 24px) !important;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Density: Heavy - Compact but Readable
+   For slides with 6+ items or deep nesting
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.theme-blackhat .bh-content-slide.density-heavy .bh-body {
+    /*justify-content: flex-start !important;  !* Heavy content starts at top *!*/
+    padding-top: 20px !important;
+}
+
+.theme-blackhat .bh-content-slide.density-heavy .bh-level-1 > li {
+    font-size: clamp(20px, 2.8vw, 26px) !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    line-height: 1.3 !important;
+}
+
+.theme-blackhat .bh-content-slide.density-heavy .bh-level-1 > li::before {
+    font-size: 30px !important;
+    top: 10px !important;
+}
+
+.theme-blackhat .bh-content-slide.density-heavy .bh-level-2 {
+    margin-top: 4px !important;
+}
+
+.theme-blackhat .bh-content-slide.density-heavy .bh-level-2 > li {
+    font-size: clamp(16px, 2.2vw, 20px) !important;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+}
+
+.theme-blackhat .bh-content-slide.density-heavy .bh-level-3 > li {
+    font-size: clamp(14px, 1.8vw, 17px) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Comparison Slide - Same Treatment
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.theme-blackhat .bh-comparison-slide .bh-comparison-body {
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+    padding: 25px !important;
+}
+
+.theme-blackhat .bh-comparison-slide.density-light .bh-level-1 > li,
+.theme-blackhat .bh-comparison-slide.density-normal .bh-level-1 > li {
+    font-size: clamp(20px, 2.5vw, 26px) !important;
+    padding: 10px 0 10px 35px !important;
+}
+
+.theme-blackhat .bh-comparison-slide.density-heavy .bh-level-1 > li {
+    font-size: clamp(16px, 2vw, 20px) !important;
+    padding: 6px 0 6px 30px !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Print Adjustments
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+@media print {
+    .theme-blackhat .bh-content-slide .bh-body {
+        /*justify-content: center !important;*/
+    }
+    
+    .theme-blackhat .bh-content-slide.density-light .bh-level-1 > li {
+        font-size: 32px !important;
+        padding: 18px 0 18px 45px !important;
+    }
+    
+    .theme-blackhat .bh-content-slide.density-normal .bh-level-1 > li {
+        font-size: 26px !important;
+        padding: 12px 0 12px 42px !important;
+    }
+    
+    .theme-blackhat .bh-content-slide.density-heavy .bh-level-1 > li {
+        font-size: 20px !important;
+        padding: 6px 0 6px 38px !important;
+    }
+}
+
+
+/* extra settings */
+.theme-blackhat .bh-content-slide {
+    justify-content: normal !important;
+}
+
+.theme-blackhat .bh-comparison-slide {
+    justify-content: normal !important;
+}

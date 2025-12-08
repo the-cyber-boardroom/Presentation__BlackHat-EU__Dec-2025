@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Deck - v0.1.5</title>
+    
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         v0.1.5 - IFD Link Chain
+         
+         Base:     v0.1.0 (complete components and styles)
+         Override: v0.1.2 print-16x9.css (16:9 print layout)
+         Override: v0.1.3 slide-layout-fix.css (title positioning, grid layout)
+         Override: v0.1.4 content-spacing.css (vertical distribution)
+         Override: v0.1.5 title-alignment.css (align title with bullets)
+         Override: v0.1.4 content-density.js (density detection)
+         ═══════════════════════════════════════════════════════════════════════ -->
+    
+    <!-- Base styles from v0.1.0 -->
+    <link rel="stylesheet" href="../v0.1.0/css/common.css">
+    <link rel="stylesheet" href="../v0.1.0/css/theme-blackhat.css">
+    <link rel="stylesheet" href="../v0.1.0/components/slide-deck/slide-deck.css">
+    <link rel="stylesheet" href="../v0.1.0/components/slide-page/slide-page.css">
+    
+    <!-- v0.1.2 Override: 16:9 Print Layout -->
+    <link rel="stylesheet" href="../v0.1.2/css/print-16x9.css">
+    
+    <!-- v0.1.3 Override: Title positioning and grid layout -->
+    <link rel="stylesheet" href="../v0.1.3/css/slide-layout-fix.css">
+    
+    <!-- v0.1.4 Override: Content vertical distribution -->
+    <link rel="stylesheet" href="../v0.1.4/css/content-spacing.css">
+    
+    <!-- v0.1.5 Override: Title aligned with bullet text -->
+    <link rel="stylesheet" href="css/title-alignment.css">
+</head>
+<body>
+    <slide-deck 
+        class="theme-blackhat" 
+        data-src="../v0.1.1/decks/blackhat-eu-2025-slides.json">
+    </slide-deck>
+
+    <!-- Base components from v0.1.0 -->
+    <script src="../v0.1.0/components/slide-page/slide-page.js"></script>
+    <script src="../v0.1.0/components/slide-deck/slide-deck.js"></script>
+    
+    <!-- v0.1.4 Override: Density detection -->
+    <script src="../v0.1.4/js/content-density.js"></script>
+</body>
+</html>
