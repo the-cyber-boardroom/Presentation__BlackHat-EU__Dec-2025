@@ -34,11 +34,11 @@ cd MGraph-AI__Service__Graphs
 git checkout -b dev
 
 # Add the template repository as a remote
-git remote add template https://github.com/the-cyber-boardroom/Presentation__BlackHat-EU__Dec-2025.git
+git remote add template https://github.com/the-cyber-boardroom/presentation_blackhat_eu_dec_2025.git
 
 # Fetch and merge template
 git fetch template
-git merge template/main --allow-unrelated-histories -m "Initial import from Presentation__BlackHat-EU__Dec-2025 template"
+git merge template/main --allow-unrelated-histories -m "Initial import from presentation_blackhat_eu_dec_2025 template"
 ```
 
 ## Step 3: Rename Service
@@ -51,7 +51,7 @@ git merge template/main --allow-unrelated-histories -m "Initial import from Pres
 ### Option B: Manual rename
 ```bash
 # Rename the main directory
-mv presentation__blackhat-eu__dec-2025 mgraph_ai_service_graphs
+mv presentation_blackhat_eu_dec_2025 mgraph_ai_service_graphs
 ```
 
 ## Step 4: Global Search and Replace
@@ -62,11 +62,11 @@ Open the project in PyCharm (or your preferred IDE) and perform these global sea
    - Should find ~10 occurrences
    - These are in documentation and comments
 
-2. **Replace "presentation__blackhat-eu__dec-2025"** → **"mgraph_ai_service_graphs"**
+2. **Replace "presentation_blackhat_eu_dec_2025"** → **"mgraph_ai_service_graphs"**
    - Should find 1-2 occurrences (after rename script)
    - This is the Python package name
 
-3. **Replace "Presentation__BlackHat-EU__Dec-2025"** → **"MGraph-AI__Service__Graphs"**
+3. **Replace "presentation_blackhat_eu_dec_2025"** → **"MGraph-AI__Service__Graphs"**
    - Should find ~35 occurrences
    - These are in README, documentation, and GitHub URLs
 
@@ -143,7 +143,7 @@ git add .
 # Commit with descriptive message
 git commit -m "Initialize MGraph-AI Service Graphs from template
 
-- Based on Presentation__BlackHat-EU__Dec-2025 v0.3.0
+- Based on presentation_blackhat_eu_dec_2025 v0.3.0
 - Service name: mgraph_ai_service_graphs
 - Repository: MGraph-AI__Service__Graphs
 - All tests passing"

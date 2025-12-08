@@ -1,6 +1,6 @@
 from osbot_fast_api_serverless.deploy.Deploy__Serverless__Fast_API  import Deploy__Serverless__Fast_API
-from presentation__blackhat-eu__dec-2025.config                                  import SERVICE_NAME, LAMBDA_DEPENDENCIES__BASE__SERVICE
-from presentation__blackhat-eu__dec-2025.fast_api.lambda_handler                 import run
+from presentation_blackhat_eu_dec_2025.config                                  import SERVICE_NAME, LAMBDA_DEPENDENCIES__BASE__SERVICE
+from presentation_blackhat_eu_dec_2025.fast_api.lambda_handler                 import run
 
 class Deploy__Service(Deploy__Serverless__Fast_API):
 

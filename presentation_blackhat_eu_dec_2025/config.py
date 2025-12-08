@@ -1,4 +1,4 @@
-from presentation__blackhat-eu__dec-2025 import package_name
+from presentation_blackhat_eu_dec_2025 import package_name
 
 SERVICE_NAME                       = package_name
 FAST_API__TITLE                          = "Presentation BlackHat EU Dec 2025"

@@ -13,7 +13,7 @@ git pull origin dev
 
 # Update version in files
 echo "📝 Updating version to v1.0.0..."
-echo "v1.0.0" > presentation__blackhat-eu__dec-2025/version
+echo "v1.0.0" > presentation_blackhat_eu_dec_2025/version
 
 # Update README.md - handle both macOS and Linux sed
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -28,11 +28,11 @@ fi
 
 # Show what changed
 echo "📋 Changes to be committed:"
-git diff presentation__blackhat-eu__dec-2025/version README.md pyproject.toml
+git diff presentation_blackhat_eu_dec_2025/version README.md pyproject.toml
 
 # Commit changes
 echo "💾 Committing changes..."
-git add presentation__blackhat-eu__dec-2025/version README.md pyproject.toml
+git add presentation_blackhat_eu_dec_2025/version README.md pyproject.toml
 git commit -m "Release v1.0.0"
 
 # Tag the commit
@@ -47,7 +47,7 @@ git push origin v1.0.0
 echo "✅ v1.0.0 released successfully!"
 echo ""
 echo "📝 Next steps - Create a GitHub Release manually:"
-echo "   1. Go to https://github.com/the-cyber-boardroom/Presentation__BlackHat-EU__Dec-2025/releases"
+echo "   1. Go to https://github.com/the-cyber-boardroom/presentation_blackhat_eu_dec_2025/releases"
 echo "   2. Click 'Create a new release'"
 echo "   3. Choose tag: v1.0.0"
 echo "   4. Release title: v1.0.0"

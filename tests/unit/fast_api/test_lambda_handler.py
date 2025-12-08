@@ -4,7 +4,7 @@ import pytest
 from unittest                                            import TestCase
 from osbot_utils.utils.Json                              import str_to_json
 #from tests.unit.Service__Fast_API__Test_Objs             import setup_local_stack
-from presentation__blackhat-eu__dec-2025.fast_api.lambda_handler      import run
+from presentation_blackhat_eu_dec_2025.fast_api.lambda_handler      import run
 
 
 class test_lambda_handler(TestCase):

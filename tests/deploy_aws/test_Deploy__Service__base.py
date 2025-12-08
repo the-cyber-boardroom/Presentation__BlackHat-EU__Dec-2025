@@ -1,9 +1,9 @@
 import pytest
-from osbot_utils.utils.Misc                                        import list_set
-from osbot_fast_api_serverless.deploy.Deploy__Serverless__Fast_API import DEFAULT__ERROR_MESSAGE__WHEN_FAST_API_IS_OK
-from presentation__blackhat-eu__dec-2025.config                                 import LAMBDA_DEPENDENCIES__BASE__SERVICE
-from presentation__blackhat-eu__dec-2025.utils.Version                          import version__presentation__blackhat-eu__dec-2025
-from presentation__blackhat-eu__dec-2025.utils.deploy.Deploy__Service           import Deploy__Service
+from osbot_utils.utils.Misc                                                   import list_set
+from osbot_fast_api_serverless.deploy.Deploy__Serverless__Fast_API            import DEFAULT__ERROR_MESSAGE__WHEN_FAST_API_IS_OK
+from presentation_blackhat_eu_dec_2025.config                                 import LAMBDA_DEPENDENCIES__BASE__SERVICE
+from presentation_blackhat_eu_dec_2025.utils.Version                          import version__presentation_blackhat_eu_dec_2025
+from presentation_blackhat_eu_dec_2025.utils.deploy.Deploy__Service           import Deploy__Service
 
 
 class test_Deploy__Service__base():     # Base class for deployment tests - override stage in subclasses
@@ -35,7 +35,7 @@ class test_Deploy__Service__base():     # Base class for deployment tests - over
         assert self.deploy_fast_api.invoke().get('errorMessage') == DEFAULT__ERROR_MESSAGE__WHEN_FAST_API_IS_OK
 
     def test_5__invoke__function_url(self):
-        version = {'version': version__presentation__blackhat-eu__dec-2025}
+        version = {'version': version__presentation_blackhat_eu_dec_2025}
         assert self.deploy_fast_api.invoke__function_url('/info/health') == {'status': 'ok'}
 
     # def test_6__delete(self):

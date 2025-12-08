@@ -4,7 +4,7 @@ This guide walks through the complete setup process from initial repository crea
 
 ## 📋 Prerequisites
 
-- GitHub repository created: `https://github.com/the-cyber-boardroom/Presentation__BlackHat-EU__Dec-2025`
+- GitHub repository created: `https://github.com/the-cyber-boardroom/presentation_blackhat_eu_dec_2025`
 - AWS account with appropriate permissions
 - GitHub CLI (`gh`) installed (optional but helpful)
 - AWS CLI configured locally
@@ -26,8 +26,8 @@ In your GitHub repository, go to Settings → Secrets and variables → Actions,
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/the-cyber-boardroom/Presentation__BlackHat-EU__Dec-2025.git
-cd Presentation__BlackHat-EU__Dec-2025
+git clone https://github.com/the-cyber-boardroom/presentation_blackhat_eu_dec_2025.git
+cd presentation_blackhat_eu_dec_2025
 
 # 2. Create initial commit (empty repo)
 git init
@@ -35,7 +35,7 @@ echo "# Presentation BlackHat EU Dec 2025" > temp.md
 git add temp.md
 git commit -m "Initial repository creation"
 git branch -M main
-git remote add origin https://github.com/the-cyber-boardroom/Presentation__BlackHat-EU__Dec-2025.git
+git remote add origin https://github.com/the-cyber-boardroom/presentation_blackhat_eu_dec_2025.git
 git push -u origin main
 
 # 3. Tag the initial commit with v0.1.0
@@ -77,7 +77,7 @@ After pushing to dev:
 3. **Verify AWS Lambda**:
    - Log into AWS Console
    - Navigate to Lambda → Functions
-   - Look for `presentation__blackhat-eu__dec-2025-dev`
+   - Look for `presentation_blackhat_eu_dec_2025-dev`
    - Check Function URL is created
 
 ## 🌐 Step 4: Configure CloudFront and DNS
@@ -120,7 +120,7 @@ Pattern: `{stage}.{service-name}.mgraph.ai`
 3. **Test the domain**:
    ```bash
    curl https://dev.base.mgraph.ai/health
-   # Should return: {"status":"healthy","service":"presentation__blackhat-eu__dec-2025"}
+   # Should return: {"status":"healthy","service":"presentation_blackhat_eu_dec_2025"}
    ```
 
 ## 📈 Step 5: Release to Main/QA
@@ -144,7 +144,7 @@ git pull origin dev
 3. **Verify QA deployment**:
    - Check GitHub Actions for "CI Pipeline - MAIN" workflow
    - Version should increment to v0.2.0
-   - Lambda function `presentation__blackhat-eu__dec-2025-qa` should be created
+   - Lambda function `presentation_blackhat_eu_dec_2025-qa` should be created
    - Repeat CloudFront/DNS setup for `qa.base.mgraph.ai`
 
 ## 🚢 Step 6: Deploy to Production
@@ -157,7 +157,7 @@ git pull origin dev
    - Click "Run workflow"
 
 2. **Verify production deployment**:
-   - Lambda function `presentation__blackhat-eu__dec-2025-prod` should be created
+   - Lambda function `presentation_blackhat_eu_dec_2025-prod` should be created
    - Repeat CloudFront/DNS setup for `prod.base.mgraph.ai`
 
 ## 🏷️ Step 7: Release v1.0.0
@@ -173,7 +173,7 @@ git checkout dev
 git pull origin dev
 
 # Update version in files
-echo "v1.0.0" > presentation__blackhat-eu__dec-2025/version
+echo "v1.0.0" > presentation_blackhat_eu_dec_2025/version
 
 # Update README.md
 sed -i '' 's/release-v[0-9]\+\.[0-9]\+\.[0-9]\+/release-v1.0.0/g' README.md
@@ -182,7 +182,7 @@ sed -i '' 's/release-v[0-9]\+\.[0-9]\+\.[0-9]\+/release-v1.0.0/g' README.md
 sed -i '' 's/version     = "v[0-9]\+\.[0-9]\+\.[0-9]\+"/version     = "v1.0.0"/g' pyproject.toml
 
 # Commit changes
-git add presentation__blackhat-eu__dec-2025/version README.md pyproject.toml
+git add presentation_blackhat_eu_dec_2025/version README.md pyproject.toml
 git commit -m "Release v1.0.0"
 
 # Tag the commit
@@ -194,7 +194,7 @@ git push origin v1.0.0
 
 echo "✅ v1.0.0 released!"
 echo "📝 Now create a GitHub Release manually:"
-echo "   1. Go to https://github.com/the-cyber-boardroom/Presentation__BlackHat-EU__Dec-2025/releases"
+echo "   1. Go to https://github.com/the-cyber-boardroom/presentation_blackhat_eu_dec_2025/releases"
 echo "   2. Click 'Create a new release'"
 echo "   3. Choose tag: v1.0.0"
 echo "   4. Release title: v1.0.0"

@@ -1,12 +1,12 @@
 [tool.poetry]
-name        = "presentation__blackhat-eu__dec-2025"
+name        = "presentation_blackhat_eu_dec_2025"
 version     = "v0.6.0"
-description = "Presentation__BlackHat-EU__Dec-2025"
+description = "presentation_blackhat_eu_dec_2025"
 authors     = ["Dinis Cruz <dinis.cruz@owasp.org>"]
 license     = "Apache 2.0"
 readme      = "README.md"
-homepage    = "https://github.com/the-cyber-boardroom/Presentation__BlackHat-EU__Dec-2025"
-repository  = "https://github.com/the-cyber-boardroom/Presentation__BlackHat-EU__Dec-2025"
+homepage    = "https://github.com/the-cyber-boardroom/presentation_blackhat_eu_dec_2025"
+repository  = "https://github.com/the-cyber-boardroom/presentation_blackhat_eu_dec_2025"
 
 [tool.poetry.dependencies]
 python                     = "^3.12"

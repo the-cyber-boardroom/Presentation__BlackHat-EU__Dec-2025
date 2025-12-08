@@ -32,7 +32,7 @@ on:
         required: false
 
 env:
-  PACKAGE_NAME: 'presentation__blackhat-eu__dec-2025'
+  PACKAGE_NAME: 'presentation_blackhat_eu_dec_2025'
 
 jobs:
   run-tests:

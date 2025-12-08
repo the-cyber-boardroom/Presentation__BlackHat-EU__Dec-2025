@@ -6,7 +6,7 @@ from osbot_utils.type_safe.Type_Safe                                   import Ty
 from osbot_utils.type_safe.primitives.domains.identifiers.Random_Guid  import Random_Guid
 from osbot_utils.utils.Env                                             import set_env
 from starlette.testclient                                              import TestClient
-from presentation__blackhat-eu__dec-2025.fast_api.Base__Service__Fast_API           import Base__Service__Fast_API
+from presentation_blackhat_eu_dec_2025.fast_api.Base__Service__Fast_API           import Base__Service__Fast_API
 
 TEST_API_KEY__NAME = 'key-used-in-pytest'
 TEST_API_KEY__VALUE = Random_Guid()

@@ -54,22 +54,22 @@ print_success "Dev branch created"
 
 # Step 3: Add template repository as remote
 print_step "Adding template repository..."
-git remote add template https://github.com/the-cyber-boardroom/Presentation__BlackHat-EU__Dec-2025.git
+git remote add template https://github.com/the-cyber-boardroom/presentation_blackhat_eu_dec_2025.git
 print_success "Template remote added"
 
 # Step 4: Fetch and merge template
 print_step "Fetching and merging template..."
 git fetch template
-git merge template/main --allow-unrelated-histories -m "Initial import from Presentation__BlackHat-EU__Dec-2025 template"
+git merge template/main --allow-unrelated-histories -m "Initial import from presentation_blackhat_eu_dec_2025 template"
 print_success "Template merged"
 
 # Step 5: Rename the service directory
-print_step "Renaming service directory from presentation__blackhat-eu__dec-2025 to $SERVICE_NAME_UNDERSCORES..."
-if [ -d "presentation__blackhat-eu__dec-2025" ]; then
-    mv presentation__blackhat-eu__dec-2025 "$SERVICE_NAME_UNDERSCORES"
+print_step "Renaming service directory from presentation_blackhat_eu_dec_2025 to $SERVICE_NAME_UNDERSCORES..."
+if [ -d "presentation_blackhat_eu_dec_2025" ]; then
+    mv presentation_blackhat_eu_dec_2025 "$SERVICE_NAME_UNDERSCORES"
     print_success "Service directory renamed"
 else
-    print_error "presentation__blackhat-eu__dec-2025 directory not found!"
+    print_error "presentation_blackhat_eu_dec_2025 directory not found!"
     exit 1
 fi
 
@@ -103,11 +103,11 @@ replace_in_files() {
 # Replace "Presentation BlackHat EU Dec 2025" with the new service title
 replace_in_files "Presentation BlackHat EU Dec 2025" "$SERVICE_NAME_TITLE" "service title"
 
-# Replace "presentation__blackhat-eu__dec-2025" with the new package name
-replace_in_files "presentation__blackhat-eu__dec-2025" "$SERVICE_NAME_UNDERSCORES" "Python package name"
+# Replace "presentation_blackhat_eu_dec_2025" with the new package name
+replace_in_files "presentation_blackhat_eu_dec_2025" "$SERVICE_NAME_UNDERSCORES" "Python package name"
 
-# Replace "Presentation__BlackHat-EU__Dec-2025" with the new repository name
-replace_in_files "Presentation__BlackHat-EU__Dec-2025" "$REPO_NAME" "repository name"
+# Replace "presentation_blackhat_eu_dec_2025" with the new repository name
+replace_in_files "presentation_blackhat_eu_dec_2025" "$REPO_NAME" "repository name"
 
 print_success "All replacements completed"
 
@@ -144,7 +144,7 @@ print_step "Committing changes..."
 git add .
 git commit -m "Initialize $SERVICE_NAME_TITLE from template
 
-- Based on Presentation__BlackHat-EU__Dec-2025 v0.3.0
+- Based on presentation_blackhat_eu_dec_2025 v0.3.0
 - Service name: $SERVICE_NAME_UNDERSCORES
 - Repository: $REPO_NAME
 - Automated setup complete"
