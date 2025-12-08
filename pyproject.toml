@@ -9,7 +9,7 @@ homepage    = "https://github.com/the-cyber-boardroom/presentation_blackhat_eu_d
 repository  = "https://github.com/the-cyber-boardroom/presentation_blackhat_eu_dec_2025"
 
 packages    = [
-    { include = "presentation_blackhat_eu_dec_2025"            },
+    { include = "presentation_blackhat_eu_dec_2025"         },
     { include = "presentation_blackhat_eu_dec_2025__slides" }
 ]
 
