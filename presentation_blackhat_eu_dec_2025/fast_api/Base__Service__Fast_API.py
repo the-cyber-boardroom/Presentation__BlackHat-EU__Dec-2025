@@ -9,6 +9,8 @@ from presentation_blackhat_eu_dec_2025.config                   import FAST_API_
 from presentation_blackhat_eu_dec_2025.utils.Version            import version__presentation_blackhat_eu_dec_2025
 
 
+ROUTES_PATHS__SLIDES        = [f'/{UI__SLIDES__ROUTE__SLIDES}']
+
 class Base__Service__Fast_API(Serverless__Fast_API):
     name        = FAST_API__TITLE
     version     = version__presentation_blackhat_eu_dec_2025
