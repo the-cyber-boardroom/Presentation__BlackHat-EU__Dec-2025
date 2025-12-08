@@ -1,6 +1,6 @@
 import presentation_blackhat_eu_dec_2025
-from unittest                                  import TestCase
-from osbot_utils.utils.Files                   import parent_folder, file_name
+from unittest                                             import TestCase
+from osbot_utils.utils.Files                              import parent_folder, file_name
 from presentation_blackhat_eu_dec_2025.utils.Version      import Version, version__presentation_blackhat_eu_dec_2025
 
 
