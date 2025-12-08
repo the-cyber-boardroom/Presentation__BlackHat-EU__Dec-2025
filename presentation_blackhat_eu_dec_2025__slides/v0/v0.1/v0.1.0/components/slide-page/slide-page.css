@@ -218,32 +218,19 @@ slide-page.active {
    ═══════════════════════════════════════════════════════════════════════════════ */
 
 @media print {
+    /* Force ALL slides to display, not just active */
     slide-page {
-        display: flex !important;
-        position: relative;
-        page-break-after: always;
+        display: block !important;
+        position: relative !important;
+        width: 100% !important;
+        height: 100vh !important;
         page-break-inside: avoid;
-        min-height: 100vh;
-        background: white !important;
-        color: black !important;
+        break-inside: avoid;
     }
 
-    /* BlackHat theme preserves dark background in print */
+    /* BlackHat theme */
     .theme-blackhat slide-page {
-        display: block !important;
         background: #000 !important;
         color: #fff !important;
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
-        color-adjust: exact !important;
-    }
-
-    slide-page:last-child {
-        page-break-after: auto;
-    }
-
-    .slide-content {
-        max-width: none;
-        padding: 40px;
     }
 }

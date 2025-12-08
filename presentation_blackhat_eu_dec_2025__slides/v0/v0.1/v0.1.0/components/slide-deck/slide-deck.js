@@ -45,7 +45,7 @@ class SlideDeck extends HTMLElement {
                         <!-- Slides inserted here -->
                     </div>
                 </div>
-                <nav class="deck-controls">
+                <nav class="deck-controls no-print">
                     <button class="control-btn" id="btn-prev" title="Previous (←)" aria-label="Previous slide">
                         ‹
                     </button>
@@ -58,7 +58,7 @@ class SlideDeck extends HTMLElement {
                         ›
                     </button>
                 </nav>
-                <div class="deck-progress">
+                <div class="deck-progress no-print">
                     <div class="progress-bar" id="progress-bar"></div>
                 </div>
             </div>
@@ -219,13 +219,20 @@ class SlideDeck extends HTMLElement {
         this.slides = [];
 
         slidesData.forEach((slideData, index) => {
+            // Add page break div before each slide (except first)
+            if (index > 0) {
+                const pageBreak = document.createElement('div');
+                pageBreak.className = 'page-break';
+                this.slidesWrapper.appendChild(pageBreak);
+            }
+
             const slidePage = document.createElement('slide-page');
             slidePage.setSlideData(slideData, index);
-            
+
             if (index === 0) {
                 slidePage.setAttribute('active', '');
             }
-            
+
             this.slidesWrapper.appendChild(slidePage);
             this.slides.push(slidePage);
         });

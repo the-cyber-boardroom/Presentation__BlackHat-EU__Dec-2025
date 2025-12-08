@@ -223,26 +223,35 @@ slide-deck:fullscreen .deck-controls {
 
 @media print {
     slide-deck {
-        height: auto;
-        overflow: visible;
-        background: white;
+        height: auto !important;
+        overflow: visible !important;
     }
 
     .deck-container {
-        display: block;
+        display: block !important;
+        height: auto !important;
     }
 
     .slides-viewport {
-        position: static;
-        overflow: visible;
+        position: static !important;
+        overflow: visible !important;
+        height: auto !important;
     }
 
     .slides-wrapper {
-        position: static;
+        position: static !important;
+        height: auto !important;
+        display: block !important;
     }
 
     .deck-controls,
-    .deck-progress {
+    .deck-progress,
+    .no-print {
         display: none !important;
+    }
+
+    .page-break {
+        page-break-before: always;
+        break-before: always;
     }
 }
