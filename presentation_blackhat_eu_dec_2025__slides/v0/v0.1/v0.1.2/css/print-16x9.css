@@ -1,0 +1,135 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Slide Deck - 16:9 Print Layout Override
+   v0.1.2 - Surgical fix for print/PDF aspect ratio
+   
+   PowerPoint 16:9 default: 13.333" × 7.5" (33.867cm × 19.05cm)
+   This override forces all slides to maintain 16:9 in print/PDF output.
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+@media print {
+    /* ─────────────────────────────────────────────────────────────────────────
+       Page Setup - 16:9 Aspect Ratio
+       Using PowerPoint's widescreen dimensions
+       ───────────────────────────────────────────────────────────────────────── */
+    @page {
+        size: 13.333in 7.5in;   /* Exact 16:9 - PowerPoint default */
+        margin: 0;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       Root Reset for Print
+       ───────────────────────────────────────────────────────────────────────── */
+    html, body {
+        width: 13.333in;
+        height: 7.5in;
+        margin: 0;
+        padding: 0;
+        overflow: visible;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       Deck Container
+       ───────────────────────────────────────────────────────────────────────── */
+    slide-deck {
+        display: block !important;
+        width: 13.333in !important;
+        height: auto !important;
+        overflow: visible !important;
+        background: transparent !important;
+    }
+
+    .deck-container {
+        display: block !important;
+        width: 13.333in !important;
+        height: auto !important;
+    }
+
+    .slides-viewport {
+        position: static !important;
+        width: 13.333in !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    .slides-wrapper {
+        position: static !important;
+        width: 13.333in !important;
+        height: auto !important;
+        display: block !important;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       Individual Slides - Fixed 16:9 Dimensions
+       ───────────────────────────────────────────────────────────────────────── */
+    slide-page {
+        display: block !important;
+        position: relative !important;
+        width: 13.333in !important;
+        height: 7.5in !important;
+        min-height: 7.5in !important;
+        max-height: 7.5in !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+        
+        /* Page break control */
+        page-break-after: always !important;
+        break-after: page !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    /* Last slide doesn't need page break after */
+    slide-page:last-of-type {
+        page-break-after: auto !important;
+        break-after: auto !important;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       BlackHat Theme Slides - Fill the 16:9 frame
+       ───────────────────────────────────────────────────────────────────────── */
+    .theme-blackhat slide-page {
+        background-size: cover !important;
+        background-position: center !important;
+    }
+
+    .theme-blackhat .bh-slide {
+        width: 13.333in !important;
+        height: 7.5in !important;
+        box-sizing: border-box !important;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       Hide Page Break Dividers
+       ───────────────────────────────────────────────────────────────────────── */
+    .page-break {
+        display: none !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* ─────────────────────────────────────────────────────────────────────────
+       Color Preservation
+       ───────────────────────────────────────────────────────────────────────── */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Alternative Sizes (uncomment to use)
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/*
+   Standard 16:9 Sizes:
+   
+   @page { size: 13.333in 7.5in; }    // PowerPoint default (1280×720 at 96dpi)
+   @page { size: 10in 5.625in; }       // Smaller (960×540 at 96dpi)  
+   @page { size: 16in 9in; }           // Larger (1536×864 at 96dpi)
+   @page { size: 1920px 1080px; }      // Full HD pixels
+   
+   A4-ish 16:9 (fits better on A4 paper if printing physical):
+   @page { size: 297mm 167mm; }        // A4 width, 16:9 height
+*/

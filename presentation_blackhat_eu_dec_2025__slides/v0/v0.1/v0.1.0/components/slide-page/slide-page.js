@@ -95,7 +95,7 @@ class SlidePage extends HTMLElement {
         return `
             <div class="bh-slide bh-cover">
                 <div class="bh-cover-content">
-                    <img class="bh-cover-logo" src="assets/blackhat/logo-white-large.png" alt="Black Hat Europe 2025" />
+                    <img class="bh-cover-logo" src="../v0.1.0/assets/blackhat/logo-white-large.png" alt="Black Hat Europe 2025" />
                     <!--<div class="bh-cover-date">${this.esc(data.date || 'DECEMBER 8-11, 2025')}</div>
                     <div class="bh-cover-location">${this.esc(data.location || 'EXCEL LONDON / UNITED KINGDOM')}</div>-->                    
                 </div>
@@ -106,7 +106,7 @@ class SlidePage extends HTMLElement {
     renderBHTitle(data) {
         return `
             <div class="bh-slide bh-title-slide">
-                <img class="bh-header-logo" src="assets/blackhat/logo-white.png" alt="Black Hat Europe 2025" />
+                <img class="bh-header-logo" src="../v0.1.0/assets/blackhat/logo-white.png" alt="Black Hat Europe 2025" />
                 <div class="bh-title-content">
                     <h1 class="bh-title">${this.esc(data.title || 'INSERT TITLE')}</h1>
                     ${data.subtitle ? `<div class="bh-subtitle">${this.esc(data.subtitle)}</div>` : ''}
@@ -123,7 +123,7 @@ class SlidePage extends HTMLElement {
     renderBHSection(data) {
         return `
             <div class="bh-slide bh-section-slide">
-                <img class="bh-center-logo" src="assets/blackhat/logo-white.png" alt="Black Hat Europe 2025" />
+                <img class="bh-center-logo" src="../v0.1.0/assets/blackhat/logo-white.png" alt="Black Hat Europe 2025" />
                 <div class="bh-section-content">
                     <h2 class="bh-section-title">${this.esc(data.title || 'SECTION')}</h2>
                     ${data.subtitle ? `<div class="bh-section-subtitle">${this.esc(data.subtitle)}</div>` : ''}
@@ -140,7 +140,7 @@ class SlidePage extends HTMLElement {
                 <div class="bh-body">
                     ${this.renderBHBullets(content)}
                 </div>
-                <img class="bh-corner-logo" src="assets/blackhat/logo-white.png" alt="Black Hat" />
+                <img class="bh-corner-logo" src="../v0.1.0/assets/blackhat/logo-white.png" alt="Black Hat" />
             </div>
         `;
     }
@@ -176,7 +176,7 @@ class SlidePage extends HTMLElement {
                         </div>
                     `).join('')}
                 </div>
-                <img class="bh-corner-logo" src="assets/blackhat/logo-white.png" alt="Black Hat" />
+                <img class="bh-corner-logo" src="../v0.1.0/assets/blackhat/logo-white.png" alt="Black Hat" />
             </div>
         `;
     }
@@ -191,7 +191,7 @@ class SlidePage extends HTMLElement {
                     <h2 class="bh-speaker-name">${this.esc(data.name || 'FIRST NAME LAST NAME')}</h2>
                     <div class="bh-speaker-title">${this.esc(data.role || 'Title, Company')}</div>
                 </div>
-                <img class="bh-corner-logo" src="assets/blackhat/logo-white.png" alt="Black Hat" />
+                <img class="bh-corner-logo" src="../v0.1.0/assets/blackhat/logo-white.png" alt="Black Hat" />
             </div>
         `;
     }
@@ -209,7 +209,7 @@ class SlidePage extends HTMLElement {
                         </div>
                     `).join('')}
                 </div>
-                <img class="bh-corner-logo" src="assets/blackhat/logo-white.png" alt="Black Hat" />
+                <img class="bh-corner-logo" src="../v0.1.0/assets/blackhat/logo-white.png" alt="Black Hat" />
             </div>
         `;
     }
@@ -229,7 +229,7 @@ class SlidePage extends HTMLElement {
                         </div>
                     `).join('')}
                 </div>
-                <img class="bh-corner-logo" src="assets/blackhat/logo-white.png" alt="Black Hat" />
+                <img class="bh-corner-logo" src="../v0.1.0/assets/blackhat/logo-white.png" alt="Black Hat" />
             </div>
         `;
     }
@@ -244,7 +244,7 @@ class SlidePage extends HTMLElement {
                 <div class="bh-image-side-image" style="order: ${contentFirst ? 2 : 1}">
                     <img src="${this.esc(data.image || 'assets/blackhat/image6.jpg')}" alt="${this.esc(data.title || '')}" />
                 </div>
-                <img class="bh-corner-logo" src="assets/blackhat/logo-white.png" alt="Black Hat" />
+                <img class="bh-corner-logo" src="../v0.1.0/assets/blackhat/logo-white.png" alt="Black Hat" />
             </div>
         `;
     }
@@ -256,7 +256,7 @@ class SlidePage extends HTMLElement {
                 <div class="bh-image-container">
                     <img src="${this.esc(data.image || 'assets/blackhat/image8.jpg')}" alt="${this.esc(data.title || '')}" />
                 </div>
-                <img class="bh-corner-logo" src="assets/blackhat/logo-white.png" alt="Black Hat" />
+                <img class="bh-corner-logo" src="../v0.1.0/assets/blackhat/logo-white.png" alt="Black Hat" />
             </div>
         `;
     }
@@ -279,7 +279,7 @@ class SlidePage extends HTMLElement {
                         </div>
                     `).join('')}
                 </div>
-                <img class="bh-corner-logo" src="assets/blackhat/logo-white.png" alt="Black Hat" />
+                <img class="bh-corner-logo" src="../v0.1.0/assets/blackhat/logo-white.png" alt="Black Hat" />
             </div>
         `;
     }

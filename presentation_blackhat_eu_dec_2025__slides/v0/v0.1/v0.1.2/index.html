@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Deck - v0.1.2</title>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         v0.1.2 - IFD Link Chain
+         Base: v0.1.0 (complete)
+         Override: v0.1.2 print-16x9.css (surgical)
+         ═══════════════════════════════════════════════════════════════════════ -->
+
+    <!-- Base styles from v0.1.0 -->
+    <link rel="stylesheet" href="../v0.1.0/css/common.css">
+    <link rel="stylesheet" href="../v0.1.0/css/theme-blackhat.css">
+    <link rel="stylesheet" href="../v0.1.0/components/slide-deck/slide-deck.css">
+    <link rel="stylesheet" href="../v0.1.0/components/slide-page/slide-page.css">
+
+    <!-- v0.1.2 Surgical Override: 16:9 Print Layout -->
+    <link rel="stylesheet" href="css/print-16x9.css">
+</head>
+<body>
+    <!--
+        Usage: Set data-src to your deck JSON file
+        The path is relative to this HTML file
+    -->
+    <slide-deck
+        class="theme-blackhat"
+        data-src="../v0.1.1/decks/blackhat-eu-2025-slides.json">
+    </slide-deck>
+
+    <!-- Base components from v0.1.0 -->
+    <script src="../v0.1.0/components/slide-page/slide-page.js"></script>
+    <script src="../v0.1.0/components/slide-deck/slide-deck.js"></script>
+</body>
+</html>
