@@ -1,12 +1,12 @@
 [tool.poetry]
-name        = "mgraph_ai_service_base"
+name        = "presentation__blackhat-eu__dec-2025"
 version     = "v0.6.0"
-description = "MGraph-AI__Service__Base"
+description = "Presentation__BlackHat-EU__Dec-2025"
 authors     = ["Dinis Cruz <dinis.cruz@owasp.org>"]
 license     = "Apache 2.0"
 readme      = "README.md"
-homepage    = "https://github.com/the-cyber-boardroom/MGraph-AI__Service__Base"
-repository  = "https://github.com/the-cyber-boardroom/MGraph-AI__Service__Base"
+homepage    = "https://github.com/the-cyber-boardroom/Presentation__BlackHat-EU__Dec-2025"
+repository  = "https://github.com/the-cyber-boardroom/Presentation__BlackHat-EU__Dec-2025"
 
 [tool.poetry.dependencies]
 python                     = "^3.12"
