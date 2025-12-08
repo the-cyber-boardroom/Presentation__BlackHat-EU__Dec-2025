@@ -22,6 +22,16 @@ slide-page.active {
     justify-content: center;
 }
 
+/* BlackHat theme slides use full area */
+.theme-blackhat slide-page.active {
+    display: block;
+}
+
+.theme-blackhat slide-page .bh-slide {
+    width: 100%;
+    height: 100%;
+}
+
 /* ═══════════════════════════════════════════════════════════════════════════════
    Slide Content Container
    ═══════════════════════════════════════════════════════════════════════════════ */
@@ -216,6 +226,16 @@ slide-page.active {
         min-height: 100vh;
         background: white !important;
         color: black !important;
+    }
+
+    /* BlackHat theme preserves dark background in print */
+    .theme-blackhat slide-page {
+        display: block !important;
+        background: #000 !important;
+        color: #fff !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
     }
 
     slide-page:last-child {

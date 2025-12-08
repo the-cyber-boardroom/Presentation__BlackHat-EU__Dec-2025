@@ -1,0 +1,238 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Slide Deck - Black Hat Europe 2025 Theme
+   v0.1.0 - Pixel-perfect recreation of official template
+   
+   Brand Colors:
+   - Black Hat Magenta: #D81EBF
+   - Black Hat Teal: #4B7CAA
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+:root {
+    --bh-magenta: #D81EBF;
+    --bh-teal: #4B7CAA;
+    --bh-dark: #000000;
+    --bh-text: #FFFFFF;
+    --bh-text-muted: rgba(255, 255, 255, 0.7);
+    --bh-gradient-bottom: #0d1b2a;
+}
+
+.theme-blackhat slide-deck { --deck-bg: var(--bh-dark); }
+
+.theme-blackhat slide-page {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bh-dark);
+    color: var(--bh-text);
+}
+
+.theme-blackhat .bh-slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Background with organic shapes */
+.theme-blackhat .bh-content-slide,
+.theme-blackhat .bh-comparison-slide,
+.theme-blackhat .bh-speaker-slide,
+.theme-blackhat .bh-speakers-2-slide,
+.theme-blackhat .bh-speakers-6-slide,
+.theme-blackhat .bh-image-below-slide,
+.theme-blackhat .bh-agenda-slide,
+.theme-blackhat .bh-title-slide {
+    background: 
+        url('../assets/blackhat/bg-content.jpg') top right no-repeat,
+        linear-gradient(180deg, var(--bh-dark) 0%, var(--bh-gradient-bottom) 100%);
+    background-size: auto 100%, cover;
+}
+
+.theme-blackhat .bh-section-slide {
+    background: 
+        url('../assets/blackhat/bg-content.jpg') left center no-repeat,
+        linear-gradient(180deg, var(--bh-dark) 0%, var(--bh-gradient-bottom) 100%);
+    background-size: auto 100%, cover;
+}
+
+/* Corner Logo */
+.theme-blackhat .bh-corner-logo {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    width: 100px;
+    height: auto;
+    z-index: 10;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Cover Slide
+   ═══════════════════════════════════════════════════════════════════════════════ */
+.theme-blackhat .bh-cover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: 
+        radial-gradient(ellipse at 30% 30%, rgba(216, 30, 191, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 70%, rgba(75, 124, 170, 0.15) 0%, transparent 50%),
+        linear-gradient(180deg, #0a0a1a 0%, #000 100%);
+}
+
+.theme-blackhat .bh-cover-content { text-align: center; }
+.theme-blackhat .bh-cover-logo { max-width: 450px; margin-bottom: 30px; }
+.theme-blackhat .bh-cover-date { font-size: 32px; font-weight: bold; letter-spacing: 2px; margin-bottom: 10px; }
+.theme-blackhat .bh-cover-location { font-size: 22px; letter-spacing: 3px; color: var(--bh-text-muted); }
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Title Slide
+   ═══════════════════════════════════════════════════════════════════════════════ */
+.theme-blackhat .bh-title-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 60px;
+    padding-bottom: 80px;
+}
+
+.theme-blackhat .bh-header-logo {
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    width: 180px;
+}
+
+.theme-blackhat .bh-title-content { max-width: 90%; }
+.theme-blackhat .bh-title { font-size: clamp(36px, 5vw, 56px); font-weight: bold; text-transform: uppercase; margin: 0 0 15px 0; line-height: 1.1; }
+.theme-blackhat .bh-subtitle { font-size: clamp(22px, 3vw, 28px); color: var(--bh-teal); padding-top: 15px; border-top: 3px solid var(--bh-teal); display: inline-block; }
+
+/* Footer bar */
+.theme-blackhat .bh-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 45px;
+    background: linear-gradient(90deg, var(--bh-teal) 0%, rgba(75, 124, 170, 0.4) 100%);
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    font-size: 16px;
+}
+
+.theme-blackhat .bh-hashtag { font-weight: bold; color: var(--bh-teal); filter: brightness(1.3); }
+.theme-blackhat .bh-divider { margin: 0 15px; opacity: 0.5; }
+.theme-blackhat .bh-handle { color: var(--bh-text-muted); }
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Section Divider
+   ═══════════════════════════════════════════════════════════════════════════════ */
+.theme-blackhat .bh-section-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 60px 80px;
+}
+
+.theme-blackhat .bh-center-logo {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+}
+
+.theme-blackhat .bh-section-content { text-align: right; max-width: 60%; }
+.theme-blackhat .bh-section-title { font-size: clamp(40px, 6vw, 64px); font-weight: bold; text-transform: uppercase; margin: 0 0 15px 0; line-height: 1.1; }
+.theme-blackhat .bh-section-subtitle { font-size: clamp(20px, 2.5vw, 26px); color: var(--bh-teal); padding-top: 15px; border-top: 3px solid var(--bh-teal); display: inline-block; }
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Content / Bullets
+   ═══════════════════════════════════════════════════════════════════════════════ */
+.theme-blackhat .bh-content-slide {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 60px 80px;
+}
+
+.theme-blackhat .bh-heading { font-size: clamp(28px, 4vw, 40px); font-weight: bold; text-transform: uppercase; margin: 0 0 25px 0; }
+.theme-blackhat .bh-body { flex: 1; }
+
+/* Bullet Lists */
+.theme-blackhat .bh-bullets { list-style: none; padding: 0; margin: 0; }
+
+.theme-blackhat .bh-level-1 > li { font-size: 28px; line-height: 1.5; padding: 6px 0 6px 35px; position: relative; }
+.theme-blackhat .bh-level-1 > li::before { content: '•'; position: absolute; left: 0; color: var(--bh-magenta); font-size: 36px; line-height: 1; top: 8px; }
+
+.theme-blackhat .bh-level-2 { margin: 8px 0 8px 35px; }
+.theme-blackhat .bh-level-2 > li { font-size: 24px; padding: 4px 0 4px 30px; position: relative; }
+.theme-blackhat .bh-level-2 > li::before { content: '○'; position: absolute; left: 0; font-size: 16px; color: var(--bh-teal); top: 8px; }
+
+.theme-blackhat .bh-level-3 { margin: 6px 0 6px 30px; }
+.theme-blackhat .bh-level-3 > li { font-size: 22px; padding: 3px 0 3px 25px; position: relative; }
+.theme-blackhat .bh-level-3 > li::before { content: '–'; position: absolute; left: 0; font-size: 20px; color: var(--bh-text-muted); top: 4px; }
+
+.theme-blackhat .bh-level-4 { margin: 4px 0 4px 25px; }
+.theme-blackhat .bh-level-4 > li { font-size: 20px; padding: 2px 0 2px 22px; position: relative; }
+.theme-blackhat .bh-level-4 > li::before { content: '▪'; position: absolute; left: 0; font-size: 14px; color: var(--bh-text-muted); top: 5px; }
+
+.theme-blackhat .bh-level-5 { margin: 4px 0 4px 22px; }
+.theme-blackhat .bh-level-5 > li { font-size: 18px; padding: 2px 0 2px 20px; position: relative; }
+.theme-blackhat .bh-level-5 > li::before { content: '▫'; position: absolute; left: 0; font-size: 12px; top: 4px; }
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Comparison (Two Columns)
+   ═══════════════════════════════════════════════════════════════════════════════ */
+.theme-blackhat .bh-comparison-slide { display: flex; flex-direction: column; padding: 50px 60px 80px; }
+.theme-blackhat .bh-comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; flex: 1; }
+.theme-blackhat .bh-comparison-col { background: rgba(75, 124, 170, 0.08); border: 1px solid var(--bh-teal); border-radius: 4px; overflow: hidden; }
+.theme-blackhat .bh-comparison-header { font-size: 26px; text-align: center; padding: 15px; background: rgba(75, 124, 170, 0.15); border-bottom: 2px solid var(--bh-teal); }
+.theme-blackhat .bh-comparison-body { padding: 20px; }
+.theme-blackhat .bh-comparison-body .bh-level-1 > li { font-size: 24px; }
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Speaker Layouts
+   ═══════════════════════════════════════════════════════════════════════════════ */
+.theme-blackhat .bh-speaker-slide { display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 60px; }
+.theme-blackhat .bh-speaker-photo-wrap { display: flex; justify-content: center; }
+.theme-blackhat .bh-speaker-photo { width: 100%; max-width: 400px; aspect-ratio: 1; object-fit: cover; border: 4px solid var(--bh-teal); }
+.theme-blackhat .bh-speaker-info { padding-left: 40px; }
+.theme-blackhat .bh-speaker-name { font-size: clamp(28px, 4vw, 42px); font-weight: bold; text-transform: uppercase; margin: 0 0 15px 0; }
+.theme-blackhat .bh-speaker-title { font-size: clamp(18px, 2.5vw, 24px); color: var(--bh-teal); padding-top: 15px; border-top: 3px solid var(--bh-teal); }
+
+/* Two Speakers */
+.theme-blackhat .bh-speakers-2-slide { display: flex; align-items: center; justify-content: center; padding: 60px; }
+.theme-blackhat .bh-speakers-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; max-width: 900px; }
+.theme-blackhat .bh-speaker-card { text-align: center; }
+.theme-blackhat .bh-speaker-card .bh-speaker-photo { max-width: 300px; margin-bottom: 20px; }
+.theme-blackhat .bh-speaker-card .bh-speaker-name { font-size: 28px; margin-bottom: 10px; }
+.theme-blackhat .bh-speaker-card .bh-speaker-title { display: inline-block; padding-top: 10px; border-top: 2px solid var(--bh-teal); }
+
+/* Six Speakers */
+.theme-blackhat .bh-speakers-6-slide { display: flex; align-items: center; padding: 40px 60px; }
+.theme-blackhat .bh-speakers-grid-6 { display: grid; grid-template-columns: 1fr 1fr; gap: 25px 60px; width: 100%; }
+.theme-blackhat .bh-speaker-row { display: flex; align-items: center; gap: 20px; }
+.theme-blackhat .bh-speaker-photo-sm { width: 140px; height: 140px; object-fit: cover; border: 3px solid var(--bh-teal); }
+.theme-blackhat .bh-speaker-row .bh-speaker-name { font-size: 22px; margin: 0 0 5px 0; }
+.theme-blackhat .bh-speaker-row .bh-speaker-title { font-size: 18px; padding-top: 0; border-top: none; }
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Image Layouts
+   ═══════════════════════════════════════════════════════════════════════════════ */
+.theme-blackhat .bh-image-side-slide { display: grid; grid-template-columns: 1fr 1fr; height: 100%; }
+.theme-blackhat .bh-image-side-content { display: flex; flex-direction: column; justify-content: center; padding: 60px; background: url('../assets/blackhat/bg-content.jpg') center center no-repeat, var(--bh-dark); background-size: cover; }
+.theme-blackhat .bh-side-title { font-size: clamp(32px, 4.5vw, 52px); font-weight: bold; text-transform: uppercase; margin: 0; line-height: 1.2; }
+.theme-blackhat .bh-image-side-image { position: relative; overflow: hidden; }
+.theme-blackhat .bh-image-side-image img { width: 100%; height: 100%; object-fit: cover; }
+
+.theme-blackhat .bh-image-below-slide { display: flex; flex-direction: column; padding: 50px 60px 80px; }
+.theme-blackhat .bh-image-container { flex: 1; display: flex; align-items: center; justify-content: center; min-height: 0; }
+.theme-blackhat .bh-image-container img { max-width: 100%; max-height: 100%; object-fit: contain; border: 3px solid var(--bh-teal); }
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Agenda
+   ═══════════════════════════════════════════════════════════════════════════════ */
+.theme-blackhat .bh-agenda-slide { display: flex; flex-direction: column; padding: 50px 60px 80px; }
+.theme-blackhat .bh-agenda-subtitle { font-size: 28px; margin-bottom: 15px; }
+.theme-blackhat .bh-agenda-date-row { display: flex; justify-content: space-between; font-size: 20px; font-weight: bold; color: var(--bh-teal); padding-bottom: 12px; border-bottom: 2px solid var(--bh-teal); margin-bottom: 15px; }
+.theme-blackhat .bh-agenda-items { flex: 1; }
+.theme-blackhat .bh-agenda-item { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; font-size: 22px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+.theme-blackhat .bh-agenda-item-time { min-width: 180px; text-align: right; }

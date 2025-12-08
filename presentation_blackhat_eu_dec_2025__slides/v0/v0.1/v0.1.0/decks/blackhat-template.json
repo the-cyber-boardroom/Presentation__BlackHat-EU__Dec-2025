@@ -1,0 +1,168 @@
+{
+    "title": "Black Hat Europe 2025 Template Demo",
+    "theme": "blackhat",
+    "author": "Black Hat",
+    "date": "December 2025",
+    "slides": [
+        {
+            "layout": "bh-cover",
+            "date": "DECEMBER 8-11, 2025",
+            "location": "EXCEL LONDON / UNITED KINGDOM"
+        },
+        {
+            "layout": "bh-title",
+            "title": "INSERT TITLE",
+            "subtitle": "Subtitle"
+        },
+        {
+            "layout": "bh-section",
+            "title": "SECTION DIVIDER SLIDE",
+            "subtitle": "Subtitle"
+        },
+        {
+            "layout": "bh-agenda",
+            "title": "AGENDA",
+            "subtitle": "Daily Schedule",
+            "date": "Monday, Dec 8",
+            "items": [
+                { "title": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor", "time": "10:00 am – 11:00 am" },
+                { "title": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor", "time": "11:00 am – 12:00 pm" },
+                { "title": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor", "time": "12:00 pm – 1:00 pm" },
+                { "title": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor", "time": "1:00 pm – 2:00 pm" },
+                { "title": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor", "time": "2:00 pm – 3:00 pm" }
+            ]
+        },
+        {
+            "layout": "bh-speaker",
+            "name": "FIRST NAME LAST NAME",
+            "role": "Title, Company",
+            "photo": "assets/blackhat/image3.jpg"
+        },
+        {
+            "layout": "bh-speakers-2",
+            "speakers": [
+                { "name": "FIRST NAME\nLAST NAME", "role": "Title, Company", "photo": "assets/blackhat/image3.jpg" },
+                { "name": "FIRST NAME\nLAST NAME", "role": "Title, Company", "photo": "assets/blackhat/image3.jpg" }
+            ]
+        },
+        {
+            "layout": "bh-speakers-6",
+            "speakers": [
+                { "name": "FIRST NAME LAST NAME", "role": "Title, Company", "photo": "assets/blackhat/image3.jpg" },
+                { "name": "FIRST NAME LAST NAME", "role": "Title, Company", "photo": "assets/blackhat/image3.jpg" },
+                { "name": "FIRST NAME LAST NAME", "role": "Title, Company", "photo": "assets/blackhat/image3.jpg" },
+                { "name": "FIRST NAME LAST NAME", "role": "Title, Company", "photo": "assets/blackhat/image3.jpg" },
+                { "name": "FIRST NAME LAST NAME", "role": "Title, Company", "photo": "assets/blackhat/image3.jpg" },
+                { "name": "FIRST NAME LAST NAME", "role": "Title, Company", "photo": "assets/blackhat/image3.jpg" }
+            ]
+        },
+        {
+            "layout": "bh-image-left",
+            "title": "TITLE AND IMAGE",
+            "image": "assets/blackhat/image6.jpg"
+        },
+        {
+            "layout": "bh-image-right",
+            "title": "TITLE AND IMAGE",
+            "image": "assets/blackhat/image7.jpg"
+        },
+        {
+            "layout": "bh-image-below",
+            "title": "TITLE AND IMAGE",
+            "image": "assets/blackhat/image8.jpg"
+        },
+        {
+            "layout": "bh-content",
+            "title": "THIS IS A CONTENT SLIDE",
+            "content": [
+                {
+                    "text": "Bullet level 1: Arial, 32pt",
+                    "children": [
+                        {
+                            "text": "Bullet level 2: Arial, 28pt",
+                            "children": [
+                                {
+                                    "text": "Bullet level 3: Arial, 24pt",
+                                    "children": [
+                                        {
+                                            "text": "Bullet level 4: Arial, 20pt",
+                                            "children": [
+                                                { "text": "Bullet level 5: Arial, 18pt" }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "layout": "bh-content",
+            "title": "THIS IS A CONTENT SLIDE",
+            "content": [
+                {
+                    "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.",
+                    "children": [
+                        {
+                            "text": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+                            "children": [
+                                {
+                                    "text": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
+                                    "children": [
+                                        {
+                                            "text": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+                                            "children": [
+                                                { "text": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci." }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                { "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing." }
+            ]
+        },
+        {
+            "layout": "bh-comparison",
+            "title": "THIS IS A COMPARISON SLIDE",
+            "columns": [
+                {
+                    "header": "Header",
+                    "content": [
+                        {
+                            "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+                            "children": [
+                                {
+                                    "text": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
+                                    "children": [
+                                        { "text": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac." }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "header": "Header",
+                    "content": [
+                        {
+                            "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+                            "children": [
+                                {
+                                    "text": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
+                                    "children": [
+                                        { "text": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac." }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -198,11 +198,12 @@ class SlideDeck extends HTMLElement {
             document.title = data.title;
         }
 
+        // Remove any existing theme classes
+        this.classList.remove('theme-light', 'theme-dark', 'theme-blackhat');
+
         // Apply theme class if specified
-        if (data.theme === 'light') {
-            this.classList.add('theme-light');
-        } else {
-            this.classList.remove('theme-light');
+        if (data.theme) {
+            this.classList.add(`theme-${data.theme}`);
         }
     }
 

@@ -3,109 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slide Deck - v0.1.0</title>
+    <title>Black Hat Europe 2025</title>
     
-    <!-- ═══════════════════════════════════════════════════════════════════════
-         Slide Deck - v0.1.0 Core MVP (Static Loading)
-         IFD-based slide presentation system
-         
-         All slides loaded from static JSON files in decks/ folder.
-         No server API required - works with static hosting (S3, CloudFront, etc.)
-         ═══════════════════════════════════════════════════════════════════════ -->
-    
-    <!-- Styles -->
+    <!-- Base Styles -->
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="components/slide-deck/slide-deck.css">
     <link rel="stylesheet" href="components/slide-page/slide-page.css">
     
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+    <!-- BlackHat Theme -->
+    <link rel="stylesheet" href="css/theme-blackhat.css">
     
     <style>
-        /* Page-specific styles */
-        body {
+        /* Ensure proper sizing for presentation mode */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
             overflow: hidden;
+            background: #000;
         }
         
-        /* Hide controls hint after first interaction */
-        .controls-hint {
-            position: fixed;
-            bottom: 80px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.7);
-            color: rgba(255, 255, 255, 0.8);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-family: var(--font-body);
-            z-index: 1000;
-            opacity: 1;
-            transition: opacity 0.5s ease;
-            pointer-events: none;
-        }
-        
-        .controls-hint.hidden {
-            opacity: 0;
-        }
-        
-        .controls-hint kbd {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-family: var(--font-mono);
-            font-size: 0.9em;
+        slide-deck {
+            display: block;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
 <body>
-    <!-- ═══════════════════════════════════════════════════════════════════════
-         Main slide deck component
-         
-         data-src: Relative path to the deck JSON file
-         
-         Examples:
-           data-src="decks/blackhat-2025.json"
-           data-src="decks/sample.json"
-         ═══════════════════════════════════════════════════════════════════════ -->
-    <slide-deck data-src="decks/blackhat-2025.json"></slide-deck>
+    <slide-deck data-src="decks/blackhat-template.json"></slide-deck>
     
-    <!-- Controls hint (disappears after first navigation) -->
-    <div class="controls-hint" id="controls-hint">
-        Use <kbd>←</kbd> <kbd>→</kbd> to navigate • <kbd>F</kbd> for fullscreen
-    </div>
-    
-    <!-- Scripts (no api-client.js needed for static loading) -->
+    <!-- Web Components -->
     <script src="components/slide-page/slide-page.js"></script>
     <script src="components/slide-deck/slide-deck.js"></script>
-    
-    <script>
-        // Hide controls hint after first interaction
-        const hint = document.getElementById('controls-hint');
-        const hideHint = () => {
-            hint.classList.add('hidden');
-            document.removeEventListener('keydown', hideHint);
-            document.removeEventListener('click', hideHint);
-        };
-        
-        document.addEventListener('keydown', hideHint, { once: true });
-        document.addEventListener('click', hideHint, { once: true });
-        
-        // Auto-hide after 5 seconds
-        setTimeout(() => hint.classList.add('hidden'), 5000);
-        
-        // Log deck events (development)
-        document.querySelector('slide-deck').addEventListener('deck-loaded', (e) => {
-            console.log('Deck loaded:', e.detail.deck?.title, `(${e.detail.slideCount} slides)`);
-        });
-        
-        document.querySelector('slide-deck').addEventListener('slide-changed', (e) => {
-            console.log('Slide changed:', e.detail.index + 1);
-        });
-        
-        document.querySelector('slide-deck').addEventListener('deck-error', (e) => {
-            console.error('Deck error:', e.detail.error);
-        });
-    </script>
 </body>
 </html>
