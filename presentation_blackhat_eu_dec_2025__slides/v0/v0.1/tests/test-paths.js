@@ -7,8 +7,8 @@
    ═══════════════════════════════════════════════════════════════════════════════ */
 
 const TestPaths = {
-    // Base path for v0.1.0
-    BASE_PATH: '/versions/v0.1.0',
+    // Base path for v0.1.0 (relative to tests folder at v0/v0.1/tests)
+    BASE_PATH: '../v0.1.0',
     
     // Version info
     VERSIONS: {

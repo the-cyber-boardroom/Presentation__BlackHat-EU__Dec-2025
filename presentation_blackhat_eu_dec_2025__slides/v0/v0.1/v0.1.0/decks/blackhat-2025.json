@@ -1,0 +1,71 @@
+{
+    "id": "blackhat-2025",
+    "title": "BlackHat EU 2025 - Dinis Cruz",
+    "author": "Dinis Cruz",
+    "date": "December 2025",
+    "theme": "dark",
+    "slides": [
+        {
+            "layout": "title",
+            "title": "BlackHat EU 2025",
+            "subtitle": "Dinis Cruz",
+            "notes": "Opening slide - introduce yourself and the talk topic."
+        },
+        {
+            "layout": "section",
+            "title": "Introduction",
+            "subtitle": "Setting the context"
+        },
+        {
+            "layout": "bullets",
+            "title": "Agenda",
+            "content": [
+                "Introduction & Context",
+                "Key Challenges",
+                "Proposed Solutions",
+                "Demo",
+                "Q&A"
+            ],
+            "notes": "Walk through the agenda quickly."
+        },
+        {
+            "layout": "default",
+            "title": "About This Presentation",
+            "content": "This presentation is built using the IFD (Iterative Feature Development) methodology with native Web Components. No frameworks, no dependencies - just clean, maintainable code."
+        },
+        {
+            "layout": "two-column",
+            "title": "IFD Principles",
+            "content": [
+                "Real Data from Day One: No mocks, real backend from v0.1.0. Surgical overrides for incremental changes. Self-contained major versions.",
+                "Web Components: Native browser APIs, event-driven architecture. Co-located tests, zero external dependencies."
+            ]
+        },
+        {
+            "layout": "bullets",
+            "title": "Technical Stack",
+            "content": [
+                "Frontend: Native Web Components (slide-deck, slide-page)",
+                "Styling: CSS Custom Properties (design tokens)",
+                "Content: Static JSON files (no server API needed)",
+                "Deployment: CloudFront + Lambda (auth only)",
+                "Methodology: IFD v1.2.1"
+            ]
+        },
+        {
+            "layout": "section",
+            "title": "Demo",
+            "subtitle": "Let's see it in action"
+        },
+        {
+            "layout": "default",
+            "title": "Navigation",
+            "content": "Use arrow keys (← →) or swipe to navigate between slides. Press F for fullscreen. Press Home/End to jump to first/last slide. URL hash updates for direct linking (#slide-N)."
+        },
+        {
+            "layout": "section",
+            "title": "Thank You",
+            "subtitle": "Questions?"
+        }
+    ]
+}
