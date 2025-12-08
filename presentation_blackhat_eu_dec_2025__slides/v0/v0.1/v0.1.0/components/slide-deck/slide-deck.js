@@ -1,9 +1,9 @@
 /* ═══════════════════════════════════════════════════════════════════════════════
    Slide Deck - Slide Deck Component
-   v0.1.0 - Core MVP
+   v0.1.0 - Core MVP (Static Loading)
    
    Container component that manages slide navigation, loading, and keyboard
-   controls. Orchestrates the presentation experience.
+   controls. Loads slides from static JSON files (no server API required).
    ═══════════════════════════════════════════════════════════════════════════════ */
 
 class SlideDeck extends HTMLElement {
@@ -145,39 +145,64 @@ class SlideDeck extends HTMLElement {
     }
 
     /**
-     * Load slides from data source
+     * Load slides from static JSON file
+     * Uses data-src attribute for relative path to JSON file
      */
     async loadSlides() {
         this.isLoading = true;
         this.showLoading();
 
         try {
-            // Check for data attribute or fetch from API
-            const dataUrl = this.getAttribute('data-src') || '/api/slides';
+            // Get the data source - relative path to static JSON file
+            const dataSrc = this.getAttribute('data-src');
             
-            // Try to use apiClient if available, otherwise fetch directly
-            let data;
-            if (window.apiClient && window.apiClient.get) {
-                data = await window.apiClient.get(dataUrl);
-            } else {
-                const response = await fetch(dataUrl);
-                if (!response.ok) throw new Error(`Failed to load slides: ${response.status}`);
-                data = await response.json();
+            if (!dataSrc) {
+                throw new Error('No data-src attribute specified. Add data-src="decks/your-deck.json"');
             }
 
+            // Fetch the static JSON file
+            const response = await fetch(dataSrc);
+            
+            if (!response.ok) {
+                throw new Error(`Failed to load ${dataSrc}: ${response.status} ${response.statusText}`);
+            }
+
+            const data = await response.json();
+            
             this.deckData = data;
             this.renderSlides(data.slides || data);
+            
+            // Apply deck metadata
+            this.applyDeckMetadata(data);
             
             // Check for initial slide from hash
             this.handleHashChange();
             
-            this.emitEvent('deck-loaded', { slideCount: this.slides.length });
+            this.emitEvent('deck-loaded', { slideCount: this.slides.length, deck: data });
+            
         } catch (error) {
             console.error('Failed to load slides:', error);
             this.showError(error.message);
             this.emitEvent('deck-error', { error: error.message });
         } finally {
             this.isLoading = false;
+        }
+    }
+
+    /**
+     * Apply deck metadata (title, theme, etc.)
+     */
+    applyDeckMetadata(data) {
+        // Update page title if deck has a title
+        if (data.title) {
+            document.title = data.title;
+        }
+
+        // Apply theme class if specified
+        if (data.theme === 'light') {
+            this.classList.add('theme-light');
+        } else {
+            this.classList.remove('theme-light');
         }
     }
 
