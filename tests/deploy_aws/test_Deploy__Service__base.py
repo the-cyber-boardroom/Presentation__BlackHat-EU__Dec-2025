@@ -1,9 +1,9 @@
 import pytest
-from osbot_utils.utils.Misc                                        import list_set
-from osbot_fast_api_serverless.deploy.Deploy__Serverless__Fast_API import DEFAULT__ERROR_MESSAGE__WHEN_FAST_API_IS_OK
-from mgraph_ai_service_base.config                                 import LAMBDA_DEPENDENCIES__BASE__SERVICE
-from mgraph_ai_service_base.utils.Version                          import version__mgraph_ai_service_base
-from mgraph_ai_service_base.utils.deploy.Deploy__Service           import Deploy__Service
+from osbot_utils.utils.Misc                                                   import list_set
+from osbot_fast_api_serverless.deploy.Deploy__Serverless__Fast_API            import DEFAULT__ERROR_MESSAGE__WHEN_FAST_API_IS_OK
+from presentation_blackhat_eu_dec_2025.config                                 import LAMBDA_DEPENDENCIES__BASE__SERVICE
+from presentation_blackhat_eu_dec_2025.utils.Version                          import version__presentation_blackhat_eu_dec_2025
+from presentation_blackhat_eu_dec_2025.utils.deploy.Deploy__Service           import Deploy__Service
 
 
 class test_Deploy__Service__base():     # Base class for deployment tests - override stage in subclasses
@@ -30,12 +30,17 @@ class test_Deploy__Service__base():     # Base class for deployment tests - over
 
     def test_3__create(self):
         assert self.deploy_fast_api.create() is True
+        self.test_3_1__update_lambda_runtime__to_3_13()             # todo: add support to OSBot_AWS lambda deploy methods for configuring the version of the python runtime
+
+    def test_3_1__update_lambda_runtime__to_3_13(self):
+        self.deploy_fast_api.lambda_function().configuration_update(Runtime='python3.13')
+        self.deploy_fast_api.lambda_function().wait_for_function_update_to_complete()
 
     def test_4__invoke(self):
         assert self.deploy_fast_api.invoke().get('errorMessage') == DEFAULT__ERROR_MESSAGE__WHEN_FAST_API_IS_OK
 
     def test_5__invoke__function_url(self):
-        version = {'version': version__mgraph_ai_service_base}
+        version = {'version': version__presentation_blackhat_eu_dec_2025}
         assert self.deploy_fast_api.invoke__function_url('/info/health') == {'status': 'ok'}
 
     # def test_6__delete(self):

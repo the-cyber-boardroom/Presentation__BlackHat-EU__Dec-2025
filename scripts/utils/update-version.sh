@@ -10,7 +10,7 @@ fi
 NEW_VERSION=$1
 
 # Update version file
-echo -n "$NEW_VERSION" > mgraph_ai_service_base/version
+echo -n "$NEW_VERSION" > presentation_blackhat_eu_dec_2025/version
 
 # Update pyproject.toml
 if [[ "$OSTYPE" == "darwin"* ]]; then

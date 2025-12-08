@@ -1,0 +1,229 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Slide Deck - Slide Page Styles
+   v0.1.0 - Core MVP
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+slide-page {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: var(--slide-bg, #ffffff);
+    color: var(--slide-text, #1a1a2e);
+}
+
+slide-page.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Slide Content Container
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.slide-content {
+    width: 100%;
+    max-width: var(--slide-content-width, 900px);
+    padding: var(--slide-padding, 60px);
+    box-sizing: border-box;
+}
+
+.slide-empty {
+    text-align: center;
+    color: var(--color-text-muted, #888);
+    font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Typography
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.slide-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 0.5em 0;
+    letter-spacing: -0.02em;
+    color: var(--slide-heading-color, inherit);
+}
+
+.slide-subtitle {
+    font-family: var(--font-body);
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0;
+    opacity: 0.8;
+    color: var(--slide-subtitle-color, inherit);
+}
+
+.slide-heading {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 0 0.8em 0;
+    color: var(--slide-heading-color, inherit);
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 600;
+    margin: 0 0 0.3em 0;
+    color: var(--slide-heading-color, inherit);
+}
+
+.section-subtitle {
+    font-family: var(--font-body);
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-weight: 400;
+    margin: 0;
+    opacity: 0.7;
+}
+
+.slide-body {
+    font-family: var(--font-body);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    line-height: 1.6;
+}
+
+.slide-body p {
+    margin: 0 0 1em 0;
+}
+
+.slide-body p:last-child {
+    margin-bottom: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Layout: Title Slide
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.layout-title {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 60vh;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Layout: Section
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.layout-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 50vh;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Layout: Two Column
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.layout-two-column .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--slide-column-gap, 40px);
+    margin-top: 1em;
+}
+
+.layout-two-column .column {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
+    line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Layout: Image
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.layout-image {
+    text-align: center;
+}
+
+.layout-image .image-container {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.layout-image img {
+    max-width: 100%;
+    max-height: 60vh;
+    object-fit: contain;
+    border-radius: var(--radius-md, 8px);
+    box-shadow: var(--shadow-lg, 0 10px 40px rgba(0,0,0,0.15));
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Layout: Bullets
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.layout-bullets .bullet-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.layout-bullets .bullet-list li {
+    font-family: var(--font-body);
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    line-height: 1.5;
+    padding: 0.5em 0 0.5em 1.5em;
+    position: relative;
+}
+
+.layout-bullets .bullet-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.9em;
+    width: 8px;
+    height: 8px;
+    background: var(--color-accent, #6366f1);
+    border-radius: 50%;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Layout: Default
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.layout-default {
+    /* Standard content layout */
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Print Styles
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+@media print {
+    slide-page {
+        display: flex !important;
+        position: relative;
+        page-break-after: always;
+        page-break-inside: avoid;
+        min-height: 100vh;
+        background: white !important;
+        color: black !important;
+    }
+
+    slide-page:last-child {
+        page-break-after: auto;
+    }
+
+    .slide-content {
+        max-width: none;
+        padding: 40px;
+    }
+}

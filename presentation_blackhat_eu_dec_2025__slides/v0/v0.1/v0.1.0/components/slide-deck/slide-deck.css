@@ -1,0 +1,248 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Slide Deck - Slide Deck Container Styles
+   v0.1.0 - Core MVP
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+slide-deck {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: var(--deck-bg, #0f0f1a);
+}
+
+.deck-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Slides Viewport
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.slides-viewport {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.slides-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Navigation Controls
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.deck-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 8px 16px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+slide-deck:hover .deck-controls,
+slide-deck:focus-within .deck-controls {
+    opacity: 1;
+}
+
+.control-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 24px;
+    font-weight: 300;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+}
+
+.control-btn:active {
+    transform: scale(0.95);
+}
+
+.control-btn:focus {
+    outline: 2px solid var(--color-accent, #6366f1);
+    outline-offset: 2px;
+}
+
+.slide-counter {
+    font-family: var(--font-mono, 'JetBrains Mono', monospace);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    min-width: 60px;
+    text-align: center;
+}
+
+.counter-separator {
+    opacity: 0.5;
+    margin: 0 2px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Progress Bar
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.deck-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 100;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background: var(--color-accent, #6366f1);
+    transition: width 0.3s ease;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Loading State
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.deck-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: var(--font-body);
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top-color: var(--color-accent, #6366f1);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 16px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Error State
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.deck-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: var(--font-body);
+    text-align: center;
+    padding: 40px;
+}
+
+.error-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.error-message {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+}
+
+.error-detail {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin: 0 0 24px 0;
+    max-width: 400px;
+}
+
+.retry-btn {
+    padding: 10px 24px;
+    background: var(--color-accent, #6366f1);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.retry-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Fullscreen Mode
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+slide-deck:fullscreen {
+    background: #000;
+}
+
+slide-deck:fullscreen .deck-controls {
+    bottom: 30px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Print Styles
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+@media print {
+    slide-deck {
+        height: auto;
+        overflow: visible;
+        background: white;
+    }
+
+    .deck-container {
+        display: block;
+    }
+
+    .slides-viewport {
+        position: static;
+        overflow: visible;
+    }
+
+    .slides-wrapper {
+        position: static;
+    }
+
+    .deck-controls,
+    .deck-progress {
+        display: none !important;
+    }
+}
