@@ -24,7 +24,7 @@
       "layout": "bh-speaker",
       "name": "DINIS CRUZ",
       "role": "GenAI Entrepreneur & Former CISO\nAkeia.ai / The Cyber Boardroom / MyFeeds.ai",
-      "photo": "assets/blackhat/speaker-dinis.jpg",
+      "photo": "../v0.1.1/assets/dinis-cruz.jpg",
       "notes": "Brief introduction - ex-CISO background, now building AI security tools"
     },
     {

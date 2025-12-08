@@ -280,7 +280,8 @@ class SlideDeck extends HTMLElement {
         this.updateProgress();
 
         if (updateHash) {
-            window.history.replaceState(null, '', `#slide-${index + 1}`);
+            //window.history.replaceState(null, '', `#slide-${index + 1}`);
+             window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}#slide-${index + 1}`);
         }
 
         this.emitEvent('slide-changed', { 

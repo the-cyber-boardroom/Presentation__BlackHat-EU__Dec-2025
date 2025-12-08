@@ -221,19 +221,19 @@
 .theme-blackhat .bh-level-1 > li::before { content: '•'; position: absolute; left: 0; color: var(--bh-magenta); font-size: 40px; line-height: 1; top: 16px; }
 
 .theme-blackhat .bh-level-2 { margin: 8px 0 8px 40px; }
-.theme-blackhat .bh-level-2 > li { font-size: 28pt; padding: 4px 0 4px 35px; position: relative; }
+.theme-blackhat .bh-level-2 > li { font-size: 22pt; padding: 4px 0 4px 35px; position: relative; }
 .theme-blackhat .bh-level-2 > li::before { content: '○'; position: absolute; left: 0; font-size: 18px; color: var(--bh-teal); line-height: 1; top: 20px; }
 
 .theme-blackhat .bh-level-3 { margin: 6px 0 6px 35px; }
-.theme-blackhat .bh-level-3 > li { font-size: 24pt; padding: 3px 0 3px 30px; position: relative; }
+.theme-blackhat .bh-level-3 > li { font-size: 18pt; padding: 3px 0 3px 30px; position: relative; }
 .theme-blackhat .bh-level-3 > li::before { content: '–'; position: absolute; left: 0; font-size: 24px; color: var(--bh-text-muted); line-height: 1; top: 10px; }
 
 .theme-blackhat .bh-level-4 { margin: 4px 0 4px 30px; }
-.theme-blackhat .bh-level-4 > li { font-size: 20pt; padding: 2px 0 2px 25px; position: relative; }
+.theme-blackhat .bh-level-4 > li { font-size: 16pt; padding: 2px 0 2px 25px; position: relative; }
 .theme-blackhat .bh-level-4 > li::before { content: '▪'; position: absolute; left: 0; font-size: 16px; color: var(--bh-text-muted); line-height: 1; top: 8px; }
 
 .theme-blackhat .bh-level-5 { margin: 4px 0 4px 25px; }
-.theme-blackhat .bh-level-5 > li { font-size: 18pt; padding: 2px 0 2px 22px; position: relative; }
+.theme-blackhat .bh-level-5 > li { font-size: 14pt; padding: 2px 0 2px 22px; position: relative; }
 .theme-blackhat .bh-level-5 > li::before { content: '▫'; position: absolute; left: 0; font-size: 14px; color: var(--bh-text-muted); line-height: 1; top: 7px; }
 
 /* ═══════════════════════════════════════════════════════════════════════════════
