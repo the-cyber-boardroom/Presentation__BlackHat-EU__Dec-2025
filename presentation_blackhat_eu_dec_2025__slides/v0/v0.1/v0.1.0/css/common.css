@@ -168,20 +168,24 @@ html, body {
    ═══════════════════════════════════════════════════════════════════════════════ */
 
 @media print {
-    :root {
-        --slide-bg: white;
-        --slide-text: black;
-        --slide-heading-color: black;
-        --color-accent: #4f46e5;
+    @page {
+        size: landscape;
+        margin: 0;
     }
 
     html, body {
         background: white;
         color: black;
+        height: auto !important;
+        overflow: visible !important;
     }
 
-    @page {
-        size: landscape;
-        margin: 0;
+    .page-break {
+        page-break-before: always;
+        break-before: always;
+    }
+
+    .no-print {
+        display: none !important;
     }
 }
