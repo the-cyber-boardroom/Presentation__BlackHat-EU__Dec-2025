@@ -12,9 +12,15 @@ from presentation_blackhat_eu_dec_2025.utils.Version            import version__
 ROUTES_PATHS__SLIDES        = [f'/{UI__SLIDES__ROUTE__SLIDES}']
 
 class Base__Service__Fast_API(Serverless__Fast_API):
-    name        = FAST_API__TITLE
-    version     = version__presentation_blackhat_eu_dec_2025
-    description = FAST_API__DESCRIPTION
+
+
+    def setup(self):
+        with self.config as _:
+            _.enable_api_key = False                                            # allow anonymous access to this presentation (ok since there is no backend functionality here)
+            _.name           = FAST_API__TITLE
+            _.version        = version__presentation_blackhat_eu_dec_2025
+            _.description    = FAST_API__DESCRIPTION
+        return super().setup()
 
     def setup_routes(self):
         self.add_routes(Routes__Info        )
