@@ -1,13 +1,12 @@
-from unittest                                                         import TestCase
-from fastapi                                                          import FastAPI
-from osbot_fast_api.api.Fast_API                                      import ENV_VAR__FAST_API__AUTH__API_KEY__NAME, ENV_VAR__FAST_API__AUTH__API_KEY__VALUE
-from osbot_fast_api.api.schemas.consts.consts__Fast_API               import EXPECTED_ROUTES__SET_COOKIE
-from osbot_fast_api_serverless.fast_api.routes.Routes__Info           import ROUTES_INFO__HEALTH__RETURN_VALUE, ROUTES_PATHS__INFO
-#from osbot_local_stack.local_stack.Local_Stack                        import Local_Stack
-from osbot_utils.utils.Env                                            import get_env
-from starlette.testclient                                             import TestClient
+from unittest                                                           import TestCase
+from fastapi                                                            import FastAPI
+from osbot_fast_api.api.Fast_API                                        import ENV_VAR__FAST_API__AUTH__API_KEY__NAME, ENV_VAR__FAST_API__AUTH__API_KEY__VALUE
+from osbot_fast_api.api.schemas.consts.consts__Fast_API                 import EXPECTED_ROUTES__SET_COOKIE
+from osbot_fast_api_serverless.fast_api.routes.Routes__Info             import ROUTES_INFO__HEALTH__RETURN_VALUE, ROUTES_PATHS__INFO
+from osbot_utils.utils.Env                                              import get_env
+from starlette.testclient                                               import TestClient
 from presentation_blackhat_eu_dec_2025.fast_api.Base__Service__Fast_API import Base__Service__Fast_API, ROUTES_PATHS__SLIDES
-from tests.unit.Base__Service__Fast_API__Test_Objs                    import setup__base_service__fast_api_test_objs, Service__Fast_API__Test_Objs, TEST_API_KEY__NAME
+from tests.unit.Base__Service__Fast_API__Test_Objs                      import setup__base_service__fast_api_test_objs, Service__Fast_API__Test_Objs, TEST_API_KEY__NAME
 
 
 class test_Service__Fast_API__client(TestCase):

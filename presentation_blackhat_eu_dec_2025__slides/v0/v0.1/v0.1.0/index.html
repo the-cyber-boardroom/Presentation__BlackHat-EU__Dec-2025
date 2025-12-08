@@ -1,1 +1,97 @@
-presentation will go here
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Deck - v0.1.0</title>
+    
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         Slide Deck - v0.1.0 Core MVP
+         IFD-based slide presentation system
+         ═══════════════════════════════════════════════════════════════════════ -->
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="components/slide-deck/slide-deck.css">
+    <link rel="stylesheet" href="components/slide-page/slide-page.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+    
+    <style>
+        /* Page-specific styles */
+        body {
+            overflow: hidden;
+        }
+        
+        /* Hide controls hint after first interaction */
+        .controls-hint {
+            position: fixed;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-family: var(--font-body);
+            z-index: 1000;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+        
+        .controls-hint.hidden {
+            opacity: 0;
+        }
+        
+        .controls-hint kbd {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: var(--font-mono);
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main slide deck component -->
+    <slide-deck data-src="/api/slides"></slide-deck>
+    
+    <!-- Controls hint (disappears after first navigation) -->
+    <div class="controls-hint" id="controls-hint">
+        Use <kbd>←</kbd> <kbd>→</kbd> to navigate • <kbd>F</kbd> for fullscreen
+    </div>
+    
+    <!-- Scripts -->
+    <script src="js/api-client.js"></script>
+    <script src="components/slide-page/slide-page.js"></script>
+    <script src="components/slide-deck/slide-deck.js"></script>
+    
+    <script>
+        // Hide controls hint after first interaction
+        const hint = document.getElementById('controls-hint');
+        const hideHint = () => {
+            hint.classList.add('hidden');
+            document.removeEventListener('keydown', hideHint);
+            document.removeEventListener('click', hideHint);
+        };
+        
+        document.addEventListener('keydown', hideHint, { once: true });
+        document.addEventListener('click', hideHint, { once: true });
+        
+        // Auto-hide after 5 seconds
+        setTimeout(() => hint.classList.add('hidden'), 5000);
+        
+        // Log deck events (development)
+        document.querySelector('slide-deck').addEventListener('deck-loaded', (e) => {
+            console.log('Deck loaded:', e.detail);
+        });
+        
+        document.querySelector('slide-deck').addEventListener('slide-changed', (e) => {
+            console.log('Slide changed:', e.detail.index + 1);
+        });
+    </script>
+</body>
+</html>
