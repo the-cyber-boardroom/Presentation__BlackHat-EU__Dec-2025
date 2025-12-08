@@ -96,8 +96,8 @@ class SlidePage extends HTMLElement {
             <div class="bh-slide bh-cover">
                 <div class="bh-cover-content">
                     <img class="bh-cover-logo" src="assets/blackhat/logo-white-large.png" alt="Black Hat Europe 2025" />
-                    <div class="bh-cover-date">${this.esc(data.date || 'DECEMBER 8-11, 2025')}</div>
-                    <div class="bh-cover-location">${this.esc(data.location || 'EXCEL LONDON / UNITED KINGDOM')}</div>
+                    <!--<div class="bh-cover-date">${this.esc(data.date || 'DECEMBER 8-11, 2025')}</div>
+                    <div class="bh-cover-location">${this.esc(data.location || 'EXCEL LONDON / UNITED KINGDOM')}</div>-->                    
                 </div>
             </div>
         `;
@@ -140,7 +140,7 @@ class SlidePage extends HTMLElement {
                 <div class="bh-body">
                     ${this.renderBHBullets(content)}
                 </div>
-                <img class="bh-corner-logo" src="assets/blackhat/logo-footer.png" alt="Black Hat" />
+                <img class="bh-corner-logo" src="assets/blackhat/logo-white.png" alt="Black Hat" />
             </div>
         `;
     }
@@ -176,7 +176,7 @@ class SlidePage extends HTMLElement {
                         </div>
                     `).join('')}
                 </div>
-                <img class="bh-corner-logo" src="assets/blackhat/logo-footer.png" alt="Black Hat" />
+                <img class="bh-corner-logo" src="assets/blackhat/logo-white.png" alt="Black Hat" />
             </div>
         `;
     }
@@ -191,7 +191,7 @@ class SlidePage extends HTMLElement {
                     <h2 class="bh-speaker-name">${this.esc(data.name || 'FIRST NAME LAST NAME')}</h2>
                     <div class="bh-speaker-title">${this.esc(data.role || 'Title, Company')}</div>
                 </div>
-                <img class="bh-corner-logo" src="assets/blackhat/logo-footer.png" alt="Black Hat" />
+                <img class="bh-corner-logo" src="assets/blackhat/logo-white.png" alt="Black Hat" />
             </div>
         `;
     }
@@ -209,7 +209,7 @@ class SlidePage extends HTMLElement {
                         </div>
                     `).join('')}
                 </div>
-                <img class="bh-corner-logo" src="assets/blackhat/logo-footer.png" alt="Black Hat" />
+                <img class="bh-corner-logo" src="assets/blackhat/logo-white.png" alt="Black Hat" />
             </div>
         `;
     }
@@ -229,7 +229,7 @@ class SlidePage extends HTMLElement {
                         </div>
                     `).join('')}
                 </div>
-                <img class="bh-corner-logo" src="assets/blackhat/logo-footer.png" alt="Black Hat" />
+                <img class="bh-corner-logo" src="assets/blackhat/logo-white.png" alt="Black Hat" />
             </div>
         `;
     }
@@ -244,7 +244,7 @@ class SlidePage extends HTMLElement {
                 <div class="bh-image-side-image" style="order: ${contentFirst ? 2 : 1}">
                     <img src="${this.esc(data.image || 'assets/blackhat/image6.jpg')}" alt="${this.esc(data.title || '')}" />
                 </div>
-                <img class="bh-corner-logo" src="assets/blackhat/logo-footer.png" alt="Black Hat" />
+                <img class="bh-corner-logo" src="assets/blackhat/logo-white.png" alt="Black Hat" />
             </div>
         `;
     }
@@ -256,7 +256,7 @@ class SlidePage extends HTMLElement {
                 <div class="bh-image-container">
                     <img src="${this.esc(data.image || 'assets/blackhat/image8.jpg')}" alt="${this.esc(data.title || '')}" />
                 </div>
-                <img class="bh-corner-logo" src="assets/blackhat/logo-footer.png" alt="Black Hat" />
+                <img class="bh-corner-logo" src="assets/blackhat/logo-white.png" alt="Black Hat" />
             </div>
         `;
     }
@@ -279,7 +279,7 @@ class SlidePage extends HTMLElement {
                         </div>
                     `).join('')}
                 </div>
-                <img class="bh-corner-logo" src="assets/blackhat/logo-footer.png" alt="Black Hat" />
+                <img class="bh-corner-logo" src="assets/blackhat/logo-white.png" alt="Black Hat" />
             </div>
         `;
     }

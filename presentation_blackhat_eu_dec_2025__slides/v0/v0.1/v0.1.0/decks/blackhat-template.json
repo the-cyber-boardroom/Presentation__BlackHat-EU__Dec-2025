@@ -36,29 +36,29 @@
             "layout": "bh-speaker",
             "name": "FIRST NAME LAST NAME",
             "role": "Title, Company",
-            "photo": "assets/blackhat/image3.jpg"
+            "photo": "assets/blackhat/image5.jpeg"
         },
         {
             "layout": "bh-speakers-2",
             "speakers": [
-                { "name": "FIRST NAME\nLAST NAME", "role": "Title, Company", "photo": "assets/blackhat/image3.jpg" },
-                { "name": "FIRST NAME\nLAST NAME", "role": "Title, Company", "photo": "assets/blackhat/image3.jpg" }
+                { "name": "FIRST NAME\nLAST NAME", "role": "Title, Company", "photo": "assets/blackhat/image5.jpeg" },
+                { "name": "FIRST NAME\nLAST NAME", "role": "Title, Company", "photo": "assets/blackhat/image5.jpeg" }
             ]
         },
         {
             "layout": "bh-speakers-6",
             "speakers": [
-                { "name": "FIRST NAME LAST NAME", "role": "Title, Company", "photo": "assets/blackhat/image3.jpg" },
-                { "name": "FIRST NAME LAST NAME", "role": "Title, Company", "photo": "assets/blackhat/image3.jpg" },
-                { "name": "FIRST NAME LAST NAME", "role": "Title, Company", "photo": "assets/blackhat/image3.jpg" },
-                { "name": "FIRST NAME LAST NAME", "role": "Title, Company", "photo": "assets/blackhat/image3.jpg" },
-                { "name": "FIRST NAME LAST NAME", "role": "Title, Company", "photo": "assets/blackhat/image3.jpg" },
-                { "name": "FIRST NAME LAST NAME", "role": "Title, Company", "photo": "assets/blackhat/image3.jpg" }
+                { "name": "FIRST NAME LAST NAME", "role": "Title, Company", "photo": "assets/blackhat/image5.jpeg" },
+                { "name": "FIRST NAME LAST NAME", "role": "Title, Company", "photo": "assets/blackhat/image5.jpeg" },
+                { "name": "FIRST NAME LAST NAME", "role": "Title, Company", "photo": "assets/blackhat/image5.jpeg" },
+                { "name": "FIRST NAME LAST NAME", "role": "Title, Company", "photo": "assets/blackhat/image5.jpeg" },
+                { "name": "FIRST NAME LAST NAME", "role": "Title, Company", "photo": "assets/blackhat/image5.jpeg" },
+                { "name": "FIRST NAME LAST NAME", "role": "Title, Company", "photo": "assets/blackhat/image5.jpeg" }
             ]
         },
         {
             "layout": "bh-image-left",
-            "title": "TITLE AND IMAGE",
+            "title": "TITLE AND IMAGE (left)",
             "image": "assets/blackhat/image6.jpg"
         },
         {
@@ -68,7 +68,7 @@
         },
         {
             "layout": "bh-image-below",
-            "title": "TITLE AND IMAGE",
+            "title": "TITLE AND IMAGE (below)",
             "image": "assets/blackhat/image8.jpg"
         },
         {
