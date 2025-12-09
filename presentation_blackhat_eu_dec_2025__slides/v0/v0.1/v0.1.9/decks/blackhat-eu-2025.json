@@ -263,7 +263,7 @@
           "color": "#F59E0B"
         },
         {
-          "label": "Hardened Boundaries Around What Can't Be Fixed",
+          "label": "Hardened Boundaries On What Can't Be Fixed",
           "points": [
             "API throttles for fragile older systems",
             "Circuit breakers that halt abnormal transactions automatically"
@@ -320,20 +320,21 @@
           "label": "Just-in-Time, Just-Enough Access",
           "points": [
             "Privileges that EXPIRE, not persist",
-            "Admin rights only when explicitly unlocked, auto-revoke after"
+            "Admin/User/Agent rights only when explicitly unlocked, auto-revoke after"
           ],
           "color": "#8B5CF6"
         },
         {
           "label": "Shrink the Blast Radius",
           "points": [
+            "Multiple Identities per User, Service or Agent",
             "One compromised account ≠ full breach",
             "Attacker hits walls immediately - can't pivot everywhere"
           ],
           "color": "#10B981"
         }
       ],
-      "insight": "Identity is the new perimeter. Zero Trust isn't a product - it's this architecture."
+      "insight": "Identity is the new perimeter and Trust is computed, not assumed. Graph it, Audit it and Minimize it."
     },
     {
       "layout": "bh-topic-cards",
@@ -343,7 +344,7 @@
           "label": "Test Your Recovery - For Real",
           "points": [
             "Backup drills that actually restore, not just 'assume it works'",
-            "Chaos engineering beyond normal peaks - AI hammers APIs 24/7"
+            "Chaos engineering beyond normal peaks"
           ],
           "color": "#3B82F6"
         },
@@ -359,7 +360,7 @@
           "label": "Simplify Ruthlessly",
           "points": [
             "Consolidate workflows - 7 microservices → 3 on one platform",
-            "Pause new AI deployments until the foundation can support them"
+            "AI deployments need Threat Models, Guardrails and Telemetry from day one"
           ],
           "color": "#F59E0B"
         },
@@ -367,7 +368,7 @@
           "label": "Demand Vendor Accountability",
           "points": [
             "The market doesn't currently punish fragility - change that in contracts",
-            "Require SBOMs, security labels, evidence of secure development"
+            "Require SBOMs, security labels, evidence of SDLC"
           ],
           "color": "#10B981"
         }
@@ -387,8 +388,8 @@
         {
           "label": "Creating Software Is Now Trivially Easy",
           "points": [
-            "Non-engineers building apps via AI prompts",
-            "If the software doesn't exist, they will it into existence over coffee"
+            "Non-engineers (i.e. business users) building apps via AI prompts",
+            "If the software doesn't exist, they'll build it over morning coffee"
           ],
           "color": "#D81EBF"
         },
@@ -404,7 +405,8 @@
           "label": "Shadow AI Is Already Here",
           "points": [
             "Employees pasting sensitive data into ChatGPT daily",
-            "Department-level AI tools running under IT's radar"
+            "Department-level AI tools with no access controls, logging or audit trail",
+            "The next 'BUDGET_v3_UPDATED_v4_FINAL-CHANGES_v2.xlsx' is an AI-built app you've never seen"
           ],
           "color": "#E01E28"
         }
@@ -427,7 +429,7 @@
           "label": "Security as Enabler and Guide",
           "points": [
             "Provide vetted platforms and clear guidelines",
-            "Build safe internal AI services before they run to ChatGPT"
+            "Build safe internal AI services before they run to ChatGPT or the latest vibe coding service"
           ],
           "color": "#10B981"
         },
@@ -449,31 +451,31 @@
     },
     {
       "layout": "bh-topic-cards",
-      "title": "CALL TO ACTION",
+      "title": "Recommendations",
       "items": [
         {
           "label": "Build Your Digital Twin Now",
-          "points": ["Knowledge graphs of your enterprise - don't wait for a crisis"],
+          "points": ["Create Semantic Knowledge graphs of your enterprise (and then evolve into maps)"],
           "color": "#3B82F6"
         },
         {
           "label": "Invest in Detection Over Prevention",
-          "points": ["Catch the 5-10 mistakes attackers will make"],
+          "points": ["Catch the 5-10 mistakes attackers will make (and make attacking you uneconomical)"],
           "color": "#8B5CF6"
         },
         {
           "label": "Simplify Ruthlessly",
-          "points": ["Every agent you add is attack surface - earn its place"],
+          "points": ["Use AI to reduce complexity (not add another layer of it)"],
           "color": "#F59E0B"
         },
         {
           "label": "Version Control EVERYTHING",
-          "points": ["Data, configs, permissions - if you can't rewind, you can't recover"],
+          "points": ["Data, configs, permissions, apps, cloud accounts (if you can't rewind, you can't recover)"],
           "color": "#E01E28"
         },
         {
           "label": "Enable, Don't Block",
-          "points": ["Govern vibe coding before it governs you"],
+          "points": ["Enable, Secure and Uplift to production (that's real governance)"],
           "color": "#10B981"
         }
       ],
@@ -482,7 +484,7 @@
     {
       "layout": "bh-title",
       "title": "QUESTIONS?",
-      "subtitle": "@DinisCruz | The Cyber Boardroom | Akeia.ai"
+      "subtitle": "@DinisCruz | Akeia.ai | The Cyber Boardroom | MyFeeds.ai"
     }
   ]
 }
