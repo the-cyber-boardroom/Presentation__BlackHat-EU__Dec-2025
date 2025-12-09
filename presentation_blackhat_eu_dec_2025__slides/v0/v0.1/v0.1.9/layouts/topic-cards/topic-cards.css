@@ -1,0 +1,309 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Layout: Topic Cards (bh-topic-cards)
+   v0.1.9 - Category cards with bullet point details
+
+   Usage:
+   {
+     "layout": "bh-topic-cards",
+     "title": "SLIDE TITLE",
+     "items": [
+       {
+         "label": "Category Name",
+         "points": ["Detail 1", "Detail 2"],
+         "color": "#E01E28"
+       }
+     ],
+     "insight": "Key takeaway..."
+   }
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Slide Container
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.theme-blackhat .bh-topic-cards-slide {
+    display: grid !important;
+    grid-template-rows: auto 1fr auto auto;
+    grid-template-areas:
+        "header"
+        "cards"
+        "insight"
+        "footer";
+    padding: 0 !important;
+    height: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Header
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.theme-blackhat .bh-topic-cards-slide .bh-heading {
+    grid-area: header;
+    padding: 50px 60px 0 105px !important;
+    margin: 0 60px 20px 0 !important;
+    font-size: clamp(32px, 5vw, 48px) !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.02em;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--bh-magenta);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Cards Grid - Default 2x2
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.theme-blackhat .bh-topic-cards-grid {
+    grid-area: cards;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px 30px;
+    padding: 25px 80px;
+    align-items: stretch;
+}
+
+/* 3 items - single row */
+.theme-blackhat .bh-topic-cards-grid[data-count="3"] {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 25px;
+}
+
+/* 2 items - side by side centered */
+.theme-blackhat .bh-topic-cards-grid[data-count="2"] {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* 5-6 items - 3 columns */
+.theme-blackhat .bh-topic-cards-grid[data-count="5"],
+.theme-blackhat .bh-topic-cards-grid[data-count="6"] {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px 22px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Individual Card
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.theme-blackhat .bh-topic-card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.4);
+    border-left: 5px solid var(--card-color, #D81EBF);
+    border-radius: 4px;
+    overflow: hidden;
+
+    /* Subtle shadow */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+
+    /* Hover effect */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.theme-blackhat .bh-topic-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Card Label (Category Header)
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.theme-blackhat .bh-topic-card-label {
+    padding: 18px 22px 14px 22px;
+    font-size: clamp(16px, 2vw, 22px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #ffffff;
+
+    /* Accent underline */
+    border-bottom: 2px solid var(--card-color, #D81EBF);
+
+    /* Subtle gradient background */
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.05) 0%,
+        rgba(255, 255, 255, 0) 100%);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Card Body - Bullet Points
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.theme-blackhat .bh-topic-card-body {
+    flex: 1;
+    padding: 16px 22px 20px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.theme-blackhat .bh-topic-card-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: clamp(14px, 1.6vw, 18px);
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Bullet */
+.theme-blackhat .bh-topic-card-point::before {
+    content: '';
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    margin-top: 8px;
+    border-radius: 50%;
+    background: var(--card-color, #D81EBF);
+    opacity: 0.8;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Insight Banner
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.theme-blackhat .bh-topic-insight {
+    grid-area: insight;
+    margin: 10px 80px 25px 80px;
+    padding: 20px 28px;
+
+    /* Differentiated background */
+    background: linear-gradient(135deg, rgba(75, 124, 170, 0.15) 0%, rgba(216, 30, 191, 0.1) 100%);
+    border: 1px solid rgba(75, 124, 170, 0.3);
+    border-radius: 4px;
+
+    /* Typography */
+    font-size: clamp(17px, 2vw, 22px);
+    font-style: italic;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.95);
+
+    /* Left accent */
+    border-left: 4px solid var(--bh-teal);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Footer
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.theme-blackhat .bh-topic-cards-slide .bh-corner-logo {
+    grid-area: footer;
+    position: relative !important;
+    justify-self: end;
+    align-self: end;
+    margin: 0 30px 20px 0;
+    bottom: auto !important;
+    right: auto !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Responsive - Stack on Narrow Viewports
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 900px) {
+    .theme-blackhat .bh-topic-cards-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+        padding: 20px 50px;
+    }
+
+    .theme-blackhat .bh-topic-card-label {
+        padding: 14px 18px 12px 18px;
+    }
+
+    .theme-blackhat .bh-topic-card-body {
+        padding: 14px 18px 16px 18px;
+    }
+
+    .theme-blackhat .bh-topic-insight {
+        margin: 10px 50px 20px 50px;
+        padding: 16px 22px;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Print Styles
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+@media print {
+    .theme-blackhat .bh-topic-cards-slide {
+        display: grid !important;
+    }
+
+    .theme-blackhat .bh-topic-cards-grid {
+        gap: 20px 25px !important;
+        padding: 20px 60px !important;
+    }
+
+    .theme-blackhat .bh-topic-cards-grid[data-count="3"] {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    .theme-blackhat .bh-topic-cards-grid[data-count="4"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .theme-blackhat .bh-topic-card {
+        background: rgba(0, 0, 0, 0.5) !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        box-shadow: none !important;
+    }
+
+    .theme-blackhat .bh-topic-card:hover {
+        transform: none !important;
+    }
+
+    .theme-blackhat .bh-topic-card-label {
+        font-size: 18px !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .theme-blackhat .bh-topic-card-point {
+        font-size: 14px !important;
+    }
+
+    .theme-blackhat .bh-topic-insight {
+        font-size: 16px !important;
+        margin: 10px 60px 20px 60px !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Compact Mode for 5-6 Items
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.theme-blackhat .bh-topic-cards-grid[data-count="5"] .bh-topic-card-label,
+.theme-blackhat .bh-topic-cards-grid[data-count="6"] .bh-topic-card-label {
+    font-size: clamp(14px, 1.6vw, 18px);
+    padding: 14px 18px 10px 18px;
+}
+
+.theme-blackhat .bh-topic-cards-grid[data-count="5"] .bh-topic-card-body,
+.theme-blackhat .bh-topic-cards-grid[data-count="6"] .bh-topic-card-body {
+    padding: 12px 18px 16px 18px;
+    gap: 8px;
+}
+
+.theme-blackhat .bh-topic-cards-grid[data-count="5"] .bh-topic-card-point,
+.theme-blackhat .bh-topic-cards-grid[data-count="6"] .bh-topic-card-point {
+    font-size: clamp(12px, 1.4vw, 15px);
+}
+
+
+/* extra fixes*/
+
+.theme-blackhat .bh-topic-card-label {
+    /* ... existing styles ... */
+    min-height: 4.8em;  /* Accommodate 2-line titles */
+    display: flex;
+    align-items: center;
+}
+.theme-blackhat .bh-topic-cards-grid[data-count="5"] .bh-topic-card-label,
+.theme-blackhat .bh-topic-cards-grid[data-count="6"] .bh-topic-card-label {
+    min-height: 2.6em;
+}
