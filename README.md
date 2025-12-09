@@ -245,9 +245,9 @@ git push origin dev
 ### Release v2.0.0 (As Delivered)
 
 - **[View Release](https://github.com/the-cyber-boardroom/Presentation__BlackHat-EU__Dec-2025/releases/tag/v2.0.0)**
-- PDF slides
-- PPTX export
-- Source code
+- [PDF slides](https://github.com/the-cyber-boardroom/Presentation__BlackHat-EU__Dec-2025/releases/download/v2.0.0/AI.vs.AI_.Building.Resilient.Enterprises.in.the.Age.of.Autonomous.Threats.-.v0.2.0.pdf)
+- [PPTX export](https://github.com/the-cyber-boardroom/Presentation__BlackHat-EU__Dec-2025/releases/download/v2.0.0/AI.vs.AI_.Building.Resilient.Enterprises.in.the.Age.of.Autonomous.Threats.-.v0.2.0.pptx)
+- [Source code](https://github.com/the-cyber-boardroom/Presentation__BlackHat-EU__Dec-2025/tree/v2.0.0/presentation_blackhat_eu_dec_2025__slides/v0/v0.1)
 
 ---
 
