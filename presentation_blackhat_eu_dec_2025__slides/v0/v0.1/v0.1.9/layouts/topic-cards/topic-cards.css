@@ -256,20 +256,20 @@
     }
 
     .theme-blackhat .bh-topic-card-label {
-        font-size: 18px !important;
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
+        font-size: 22px !important;
     }
 
     .theme-blackhat .bh-topic-card-point {
-        font-size: 14px !important;
+        font-size: 18px !important;
     }
 
     .theme-blackhat .bh-topic-insight {
-        font-size: 16px !important;
-        margin: 10px 60px 20px 60px !important;
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
+        font-size: 20px !important;
+    }
+
+    .theme-blackhat .bh-topic-cards-grid[data-count="5"],
+    .theme-blackhat .bh-topic-cards-grid[data-count="6"] {
+        grid-template-columns: repeat(3, 1fr) !important;
     }
 }
 
