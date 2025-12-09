@@ -1,6 +1,6 @@
 [tool.poetry]
 name        = "presentation_blackhat_eu_dec_2025"
-version     = "v1.3.8"
+version     = "v1.3.9"
 description = "presentation_blackhat_eu_dec_2025"
 authors     = ["Dinis Cruz <dinis.cruz@owasp.org>"]
 license     = "Apache 2.0"
