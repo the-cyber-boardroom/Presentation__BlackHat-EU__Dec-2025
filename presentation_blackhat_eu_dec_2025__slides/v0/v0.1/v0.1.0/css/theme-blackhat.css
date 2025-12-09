@@ -268,7 +268,13 @@
 .theme-blackhat .bh-speaker-photo { width: 100%; max-width: 400px; aspect-ratio: 1; object-fit: cover; border: 4px solid var(--bh-teal); }
 .theme-blackhat .bh-speaker-info { padding-left: 40px; }
 .theme-blackhat .bh-speaker-name { font-size: clamp(28px, 4vw, 42px); font-weight: bold; text-transform: uppercase; margin: 0 0 15px 0; }
-.theme-blackhat .bh-speaker-title { font-size: clamp(18px, 2.5vw, 24px); color: var(--bh-teal); padding-top: 15px; border-top: 3px solid var(--bh-teal); }
+.theme-blackhat .bh-speaker-title {
+    font-size: clamp(18px, 2.5vw, 24px);
+    color: var(--bh-teal);
+    padding-top: 15px;
+    border-top: 3px solid var(--bh-teal);
+    white-space: pre-line;
+}
 
 /* Two Speakers */
 .theme-blackhat .bh-speakers-2-slide { display: flex; align-items: center; justify-content: center; padding: 60px; }

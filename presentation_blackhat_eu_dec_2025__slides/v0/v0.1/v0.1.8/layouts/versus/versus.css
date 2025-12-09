@@ -294,6 +294,9 @@
 
     .theme-blackhat .bh-versus-item::before {
         display: block !important;
+        width: 8px !important;
+        height: 8px !important;
+        border-radius: 50% !important;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
     }

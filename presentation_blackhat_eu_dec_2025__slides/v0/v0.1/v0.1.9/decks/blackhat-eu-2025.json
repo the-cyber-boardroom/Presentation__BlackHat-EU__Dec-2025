@@ -61,16 +61,6 @@
       "subtitle": "Autonomous Agents as Threat Actors"
     },
     {
-      "layout": "bh-incident-cards",
-      "title": "THREE CATEGORIES OF AI-DRIVEN THREATS",
-      "items": [
-        { "label": "Malicious AI Agents", "text": "Fully autonomous malware that learns, adapts, and persists", "color": "#E01E28" },
-        { "label": "Compromised Benign Agents", "text": "Your AI bots hijacked via prompt injection - operating with legitimate access, now working for the adversary", "color": "#F59E0B" },
-        { "label": "Unintentionally Harmful Agents", "text": "The paperclip maximizer scenario - dangerously efficient in ways we didn't anticipate", "color": "#8B5CF6" }
-      ],
-      "insight": "Prompt injection remains unsolved - any AI taking untrusted input can be subverted."
-    },
-    {
       "layout": "bh-versus",
       "title": "HUMAN INSIDERS VS. AI AGENTS",
       "left": {
@@ -94,6 +84,16 @@
         "color": "#E01E28"
       },
       "insight": "We've never had a malicious insider that can instantly devise new approaches when initial attempts fail. AI doesn't give up - it gets creative."
+    },
+    {
+      "layout": "bh-incident-cards",
+      "title": "THREE CATEGORIES OF AI-DRIVEN THREATS",
+      "items": [
+        { "label": "Malicious AI Agents", "text": "Fully autonomous malware that learns, adapts, and persists", "color": "#E01E28" },
+        { "label": "Compromised Benign Agents", "text": "Your AI bots hijacked via prompt injection - operating with legitimate access, now working for the adversary", "color": "#F59E0B" },
+        { "label": "Unintentionally Harmful Agents", "text": "The paperclip maximizer scenario - dangerously efficient in ways we didn't anticipate", "color": "#8B5CF6" }
+      ],
+      "insight": "Prompt injection remains unsolved - any AI taking untrusted input can be subverted."
     },
     {
       "layout": "bh-section",
@@ -124,7 +124,7 @@
           "label": "No Visibility, No Recovery",
           "points": [
             "Only ~54% have documented DR plans - fewer actually test them",
-            "Average breach detection: 9 months of dwell time"
+            "Most can't do surgical rollback - it's full restore or nothing"
           ],
           "color": "#8B5CF6"
         },
@@ -235,7 +235,7 @@
           "color": "#10B981"
         }
       ],
-      "insight": "Use GenAI to BUILD the knowledge, but deterministic systems for real-time enforcement. The graph is your situational awareness."
+      "insight": "Use GenAI to BUILD the knowledge, but use deterministic systems for real-time enforcement. The graph is your situational awareness."
     },
     {
       "layout": "bh-section",
