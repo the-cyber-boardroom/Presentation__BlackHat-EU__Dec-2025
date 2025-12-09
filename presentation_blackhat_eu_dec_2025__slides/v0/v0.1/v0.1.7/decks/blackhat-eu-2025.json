@@ -1,0 +1,382 @@
+{
+  "title": "AI vs. AI: Building Resilient Enterprises in the Age of Autonomous Threats",
+  "theme": "blackhat",
+  "metadata": {
+    "speaker": "Dinis Cruz",
+    "event": "Black Hat Europe 2025 - AI Security Summit",
+    "date": "Tuesday, December 9, 2025",
+    "time": "9:10am - 9:35am",
+    "location": "ICC Maritime Suite, Victoria 4, Level 3",
+    "duration": "25 minutes",
+    "version": "2.0"
+  },
+  "slides": [
+    {
+      "layout": "bh-cover",
+      "date": "DECEMBER 8-11, 2025",
+      "location": "EXCEL LONDON / UNITED KINGDOM"
+    },
+    {
+      "layout": "bh-title",
+      "title": "AI vs. AI",
+      "subtitle": "Building Resilient Enterprises in the Age of Autonomous Threats"
+    },
+    {
+      "layout": "bh-speaker",
+      "name": "DINIS CRUZ",
+      "role": "GenAI Entrepreneur & Former CISO\nAkeia.ai / The Cyber Boardroom / MyFeeds.ai",
+      "photo": "../v0.1.1/assets/dinis-cruz.jpg",
+      "notes": "Brief introduction - ex-CISO background, now building AI security tools. Set the tone: this talk challenges conventional AI security narrative."
+    },
+    {
+      "layout": "bh-section",
+      "title": "THE PERFECT STORM",
+      "subtitle": "Why This Moment Is Different",
+      "notes": "Transition: Set up the convergence of forces creating unprecedented risk"
+    },
+    {
+      "layout": "bh-incident-cards",
+      "title": "SECURITY'S FOUR PILLARS - ALL BROKEN",
+      "items": [
+        {
+          "label": "Engineering & Technology",
+          "text": "We know how to build secure systems - we don't do it at scale",
+          "color": "#4B7CAA"
+        },
+        {
+          "label": "Business Processes",
+          "text": "Security is an afterthought, not embedded in decisions",
+          "color": "#8B5CF6"
+        },
+        {
+          "label": "Funding & Focus",
+          "text": "NFRs chronically underfunded - features always win",
+          "color": "#F59E0B"
+        },
+        {
+          "label": "Risk Management",
+          "text": "Spreadsheets and heat maps disconnected from technical reality",
+          "color": "#E01E28"
+        }
+      ],
+      "insight": "Systems are insecure not because engineers are stupid, but because the ENVIRONMENT forces corner-cutting. All four pillars must be aligned.",
+      "notes": "Key insight: Systems are insecure not because engineers are stupid, but because the ENVIRONMENT forces corner-cutting. All four pillars must be aligned for security to work."
+    },
+    {
+      "layout": "bh-incident-cards",
+      "title": "WE'VE BEEN GETTING AWAY WITH IT",
+      "items": [
+        { "label": "AWS",         "text": "Timing bug wiped out a global database",                               "color": "#FF9900" },
+        { "label": "Azure",       "text": "Config inconsistency silently propagated, then 'detonated' worldwide", "color": "#0078D4" },
+        { "label": "Cloudflare",  "text": "Routine config change crashed bot defense, halted traffic",            "color": "#F6821F" },
+        { "label": "CrowdStrike", "text": "8.5 million Windows systems bricked by a faulty update",               "color": "#E01E28" }
+      ],
+      "insight": "These weren't sophisticated attacks - they were minor glitches that cascaded. Now imagine if they were deliberate, coordinated attacks.",
+      "notes": "The inefficiencies and limitations of legacy systems acted as a safety buffer. That buffer is disappearing as we automate and interconnect everything."
+    },
+    {
+      "layout": "bh-section",
+      "title": "THE NEW INSIDERS",
+      "subtitle": "Autonomous Agents as Threat Actors",
+      "notes": "Transition: Reframe the threat model - it's not just external attackers. The biggest risks may come from within."
+    },
+    {
+      "layout": "bh-incident-cards",
+      "title": "THREE CATEGORIES OF AI-DRIVEN THREATS",
+      "items": [
+        {
+          "label": "Malicious AI Agents",
+          "text": "Fully autonomous malware that learns, adapts, and persists",
+          "color": "#E01E28"
+        },
+        {
+          "label": "Compromised Benign Agents",
+          "text": "Your AI bots hijacked via prompt injection - operating with legitimate access, now working for the adversary",
+          "color": "#F59E0B"
+        },
+        {
+          "label": "Unintentionally Harmful Agents",
+          "text": "The paperclip maximizer scenario - dangerously efficient in ways we didn't anticipate",
+          "color": "#8B5CF6"
+        }
+      ],
+      "insight": "Prompt injection remains unsolved - any AI taking untrusted input can be subverted.",
+      "notes": "Prompt injection remains unsolved - any AI taking untrusted input can be subverted. We're essentially never had a malicious insider with near-infinite patience and the ability to instantly devise new approaches."
+    },
+    {
+      "layout": "bh-comparison",
+      "title": "HUMAN INSIDERS vs. AI AGENTS",
+      "columns": [
+        {
+          "header": "Human Insiders",
+          "content": [
+            "Natural limitations on skill and time",
+            "Rarely had maximal destructive intent",
+            "Fatigue, fear of detection, single-threaded",
+            "Contained failures - couldn't scale chaos"
+          ]
+        },
+        {
+          "header": "AI Agents",
+          "content": [
+            "Tireless, infinite patience",
+            "Machine-speed adaptation and iteration",
+            "Finds alternate paths when blocked",
+            "No moral compass unless explicitly constrained"
+          ]
+        }
+      ],
+      "notes": "Key insight: We've never had a malicious insider that can instantly devise new approaches when initial attempts fail. AI doesn't give up - it gets creative."
+    },
+    {
+      "layout": "bh-section",
+      "title": "WHY ENTERPRISES AREN'T READY",
+      "subtitle": "Fragile by Design",
+      "notes": "Transition: The uncomfortable truth about our infrastructure"
+    },
+    {
+      "layout": "bh-content",
+      "title": "FRAGILE BY DEFAULT",
+      "content": [
+        {
+          "text": "Technical Debt Crisis",
+          "children": ["~40% of IT asset value is technical debt (McKinsey)", "Systems running 'hot' with minimal safety margins"]
+        },
+        {
+          "text": "Hidden Interdependencies",
+          "children": ["Internet = circular dependency machine", "Identity, DNS, cloud, CDN - one failure cascades globally"]
+        },
+        {
+          "text": "No Visibility, No Recovery",
+          "children": ["Only ~54% have documented DR plans - fewer actually test them", "Average breach detection: 9 months of dwell time"]
+        },
+        {
+          "text": "No Version Control for Data",
+          "children": ["Code has Git. Databases? Configs? Often nothing.", "If an AI corrupts records, can you rewind?"]
+        }
+      ],
+      "notes": "You can't protect what you don't understand. You can't recover what you haven't practiced. If you don't know what an AI agent did last week, how do you 'undo' it?"
+    },
+    {
+      "layout": "bh-section",
+      "title": "THE DEFENDER'S EDGE",
+      "subtitle": "AI as Force Multiplier, Not Black Box",
+      "notes": "Transition: Here's where we flip the script. This is the core message."
+    },
+    {
+      "layout": "bh-content",
+      "title": "ATTACKERS ALWAYS MAKE MISTAKES",
+      "content": [
+        {
+          "text": "The '100% Prevention' Myth",
+          "children": ["You cannot patch everything, eliminate every gap", "And you don't have to"]
+        },
+        {
+          "text": "Every Attack Has 5-10 Missteps",
+          "children": ["Unusual logins, wrong processes, odd data movement", "Attackers lack perfect insider knowledge - they wander, they probe"]
+        },
+        {
+          "text": "Your Job: Catch the Mistakes",
+          "children": ["Before they reach the crown jewels", "Whether it's an external attacker OR your own AI spiraling"]
+        }
+      ],
+      "notes": "This reframes the entire game. Perfect prevention is impossible AND unnecessary. Detection and response are the asymmetric advantage. Real breaches require MANY failures - one click shouldn't mean total collapse."
+    },
+    {
+      "layout": "bh-content",
+      "title": "SECURITY'S ASYMMETRIC ADVANTAGE",
+      "content": [
+        {
+          "text": "Unique Enterprise-Wide Vantage Point",
+          "children": ["Access to every system, every data flow", "One of few functions focused on business SURVIVAL, not narrow objectives"]
+        },
+        {
+          "text": "You Know What 'Good' Looks Like",
+          "children": ["You define the baseline - attackers must deviate from it", "The moment something acts outside normal, you catch it"]
+        },
+        {
+          "text": "Home Court Advantage",
+          "children": ["Attackers wander chasing dead ends, making noise", "You know the terrain - use it"]
+        }
+      ],
+      "notes": "Defenders think in lists, attackers think in graphs. As long as this is true, attackers win. We need to arm defenders with graphs - and the AI to make sense of them."
+    },
+    {
+      "layout": "bh-content",
+      "title": "THE MECHANISM: KNOWLEDGE GRAPHS",
+      "content": [
+        {
+          "text": "Build a Digital Twin of Your Enterprise",
+          "children": ["Systems, data flows, identities, dependencies - all connected", "Not static docs - a living, queryable model"]
+        },
+        {
+          "text": "Semantic Graphs Link Everything",
+          "children": ["Each team's data model connects to the whole", "Query: 'What breaks if System X goes down?' - instant answer"]
+        },
+        {
+          "text": "AI Builds and Maintains the Graph",
+          "children": ["LLMs digest docs, configs, logs into structure", "Humans make decisions, AI updates the map continuously"]
+        }
+      ],
+      "notes": "This is the HOW of 'understanding your enterprise'. Not magic - graphs + AI. Use GenAI to BUILD the knowledge, but deterministic systems for real-time enforcement. The graph is your situational awareness."
+    },
+    {
+      "layout": "bh-section",
+      "title": "RADICAL SIMPLIFICATION",
+      "subtitle": "The Answer Isn't More Complexity",
+      "notes": "Transition: Counter-intuitive but essential. Every agent you add becomes part of your attack surface."
+    },
+    {
+      "layout": "bh-content",
+      "title": "ASSUME COMPROMISE, CONTAIN BLAST RADIUS",
+      "content": [
+        {
+          "text": "Strong Segmentation Inside",
+          "children": ["Crown-jewel systems walled off with strict controls", "One-way isolation for legacy components that can't be fixed"]
+        },
+        {
+          "text": "Graceful Degradation = Victory",
+          "children": ["Parts may fail, but they fail SAFELY", "No cascade into total enterprise collapse"]
+        },
+        {
+          "text": "Hardened Boundaries Around What Can't Be Fixed",
+          "children": ["API throttles for fragile older systems", "Circuit breakers that halt abnormal transactions automatically"]
+        }
+      ],
+      "notes": "The race isn't to deploy GenAI defenses faster - every agent you add to mission-critical systems becomes part of your attack surface. Simplify first."
+    },
+    {
+      "layout": "bh-content",
+      "title": "VERSION CONTROL EVERYTHING",
+      "content": [
+        {
+          "text": "Code Has Git. What About Data?",
+          "children": ["If an AI corrupts your database, can you rewind?", "Most orgs: No version history, no audit trail, no rollback"]
+        },
+        {
+          "text": "Immutable Logs, Append-Only Where Possible",
+          "children": ["Every change recorded and reversible", "Tampering becomes evident because history can't be rewritten"]
+        },
+        {
+          "text": "Consider File System as Database",
+          "children": ["Simpler architecture = smaller attack surface", "Standard backup/versioning tools work out of the box"]
+        }
+      ],
+      "notes": "SBOMs act like Git commits for software. Extend that concept to ALL enterprise data. If you can't surgically undo what a malicious process did, you have no resilience."
+    },
+    {
+      "layout": "bh-content",
+      "title": "IDENTITY GRAPHS: LEAST PRIVILEGE AT SCALE",
+      "content": [
+        {
+          "text": "Map Every Identity and Permission",
+          "children": ["Users, services, AI agents - all in one graph", "Query: 'If this account is compromised, what can it reach?'"]
+        },
+        {
+          "text": "Just-in-Time, Just-Enough Access",
+          "children": ["Privileges that EXPIRE, not persist", "Admin rights only when explicitly unlocked, auto-revoke after"]
+        },
+        {
+          "text": "Shrink the Blast Radius",
+          "children": ["One compromised account ≠ full breach", "Attacker hits walls immediately - can't pivot everywhere"]
+        }
+      ],
+      "notes": "Identity is the new perimeter. Traditional over-provisioning worked when attacks were slow. With AI-speed attacks, only graph-based, automated IAM keeps up. Zero Trust isn't a product - it's this architecture."
+    },
+    {
+      "layout": "bh-content",
+      "title": "FUND NFRs AT UNPRECEDENTED SCALE",
+      "content": [
+        "Comprehensive backup and restore drills - actually TEST them",
+        "Chaos engineering beyond normal peaks - AI doesn't respect office hours",
+        "Instrumentation everywhere for real-time visibility",
+        "Consolidate overly complex workflows - fewer moving parts = fewer failure points",
+        "Demand robustness from vendors - the market doesn't currently punish fragility"
+      ],
+      "notes": "Non-functional requirements: scalability, fault tolerance, observability, recoverability. If it isn't measured or required in contracts, it doesn't get done. Time to change that."
+    },
+    {
+      "layout": "bh-section",
+      "title": "ENABLING INNOVATION",
+      "subtitle": "Security as Enabler, Not Gatekeeper",
+      "notes": "Transition: Don't become the Department of No. The horse has bolted."
+    },
+    {
+      "layout": "bh-content",
+      "title": "VIBE CODING: THE NEW SPREADSHEETS",
+      "content": [
+        {
+          "text": "Creating Software Is Now Trivially Easy",
+          "children": ["Non-engineers building apps via AI prompts", "If the software doesn't exist, they will it into existence over coffee"]
+        },
+        {
+          "text": "Same Pattern as Excel - On Steroids",
+          "children": ["Solves immediate problem brilliantly", "Becomes mission-critical overnight", "Zero security, testing, or governance built in"]
+        },
+        {
+          "text": "Shadow AI Is Already Here",
+          "children": ["Employees pasting sensitive data into ChatGPT daily", "Department-level AI tools running under IT's radar"]
+        }
+      ],
+      "notes": "Just like spreadsheets couldn't be banned, vibe coding won't be stopped. The question isn't IF but HOW you govern it. Security teams that try to block this become irrelevant."
+    },
+    {
+      "layout": "bh-content",
+      "title": "DON'T BECOME THE DEPARTMENT OF 'NO'",
+      "content": [
+        {
+          "text": "The Horse Has Bolted",
+          "children": ["Employees will use AI regardless of policy", "Shadow-IT AI is far worse than governed AI"]
+        },
+        {
+          "text": "Security as Enabler and Guide",
+          "children": ["Provide vetted platforms and clear guidelines", "Build safe internal AI services before they run to ChatGPT"]
+        },
+        {
+          "text": "Create Handoff Pathways",
+          "children": ["Pair business 'vibe coders' with engineering buddies", "When a prototype gets traction, help industrialize it safely"]
+        }
+      ],
+      "notes": "We did this for cloud - shifted from 'no cloud' to 'here's a secure cloud framework'. Time to do it again for GenAI. Position security as the adults who make the cool new toy safe for everyone."
+    },
+    {
+      "layout": "bh-section",
+      "title": "THE PATH FORWARD",
+      "subtitle": "From Reactive Firefighting to Proactive Containment",
+      "notes": "Transition: Wrap up with clear call to action"
+    },
+    {
+      "layout": "bh-content",
+      "title": "CALL TO ACTION",
+      "content": [
+        {
+          "text": "Build your digital twin now",
+          "children": ["Knowledge graphs of your enterprise - don't wait for a crisis"]
+        },
+        {
+          "text": "Invest in detection over prevention",
+          "children": ["Catch the 5-10 mistakes attackers will make"]
+        },
+        {
+          "text": "Simplify ruthlessly",
+          "children": ["Every agent you add is attack surface - earn its place"]
+        },
+        {
+          "text": "Version control EVERYTHING",
+          "children": ["Data, configs, permissions - if you can't rewind, you can't recover"]
+        },
+        {
+          "text": "Enable, don't block",
+          "children": ["Govern vibe coding before it governs you"]
+        }
+      ],
+      "notes": "In this AI vs. AI contest, the side that UNDERSTANDS faster wins. Not the side that deploys more AI. Use GenAI to understand your enterprise deeply enough that neither attackers nor runaway agents have anywhere to hide."
+    },
+    {
+      "layout": "bh-title",
+      "title": "QUESTIONS?",
+      "subtitle": "@DinisCruz | The Cyber Boardroom | Akeia.ai",
+      "notes": "Contact info and Q&A. Remind audience: the opportunity is to use GenAI to understand your enterprise, not to deploy more black boxes."
+    }
+  ]
+}

@@ -8,4 +8,4 @@ LAMBDA_DEPENDENCIES__BASE__SERVICE = ['osbot-fast-api-serverless==v1.31.0']
 
 UI__SLIDES__ROUTE__SLIDES   = 'slides'
 UI__SLIDES__MAJOR__VERSION  = "v0/v0.1"
-UI__SLIDES__LATEST__VERSION = "v0.1.5"
+UI__SLIDES__LATEST__VERSION = "v0.1.7"
