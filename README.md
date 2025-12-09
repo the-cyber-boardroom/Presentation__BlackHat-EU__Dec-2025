@@ -6,3 +6,6 @@
 [![AWS Lambda](https://img.shields.io/badge/AWS-Lambda-orange)](https://aws.amazon.com/lambda/)
 [![License](https://img.shields.io/badge/license-Apache%202.0-green)](LICENSE)
 [![CI Pipeline - DEV](https://github.com/the-cyber-boardroom/presentation_blackhat_eu_dec_2025/actions/workflows/ci-pipeline__dev.yml/badge.svg)](https://github.com/the-cyber-boardroom/presentation_blackhat_eu_dec_2025/actions)
+
+
+CI deployed version is here: https://bh-eu-slides.mgraph.ai/slides 
