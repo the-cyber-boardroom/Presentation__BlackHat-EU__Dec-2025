@@ -1,0 +1,90 @@
+{
+  "title": "AI vs. AI - Layout Demo",
+  "theme": "blackhat",
+  "slides": [
+    {
+      "layout": "bh-cover",
+      "date": "DECEMBER 8-11, 2025",
+      "location": "EXCEL LONDON / UNITED KINGDOM"
+    },
+    {
+      "layout": "bh-title",
+      "title": "AI VS. AI",
+      "subtitle": "Building Resilient Enterprises in the Age of Autonomous Threats"
+    },
+    {
+      "layout": "bh-incident-cards",
+      "title": "WE'VE BEEN GETTING AWAY WITH IT",
+      "items": [
+        {
+          "label": "CrowdStrike",
+          "text": "8.5 million Windows systems bricked by a faulty update",
+          "color": "#E01E28"
+        },
+        { 
+          "label": "AWS", 
+          "text": "Timing bug wiped out a global database",
+          "color": "#FF9900"
+        },
+        {
+          "label": "Cloudflare",
+          "text": "Routine config change crashed bot defense, halted traffic",
+          "color": "#F6821F"
+        },
+        { 
+          "label": "Azure", 
+          "text": "Config inconsistency silently propagated, then 'detonated' worldwide",
+          "color": "#0078D4"
+        }
+
+      ],
+      "insight": "These weren't sophisticated attacks - they were minor glitches that cascaded. Now imagine if they were deliberate."
+    },
+    {
+      "layout": "bh-section",
+      "title": "THE NEW INSIDERS",
+      "subtitle": "Autonomous Agents as Threat Actors"
+    },
+    {
+      "layout": "bh-incident-cards",
+      "title": "THREE TYPES OF AI-DRIVEN THREATS",
+      "items": [
+        {
+          "label": "Malicious AI Agents",
+          "text": "Fully autonomous malware that learns and adapts to defenses",
+          "color": "#E01E28"
+        },
+        {
+          "label": "Compromised Benign Agents",
+          "text": "Your AI bots hijacked via prompt injection, operating with legitimate access",
+          "color": "#F59E0B"
+        },
+        {
+          "label": "Unintentional Harm",
+          "text": "The paperclip maximizer scenario - dangerously efficient in unexpected ways",
+          "color": "#8B5CF6"
+        }
+      ],
+      "insight": "Prompt injection remains unsolved - any AI taking untrusted input can be subverted."
+    },
+    {
+      "layout": "bh-content",
+      "title": "KEY TAKEAWAYS",
+      "content": [
+        {
+          "text": "AI vs. AI isn't about black-box defenses",
+          "children": ["It's about using AI to finally understand how enterprises actually work"]
+        },
+        {
+          "text": "Resilience beats prevention",
+          "children": ["Assume compromise, model normal, catch deviation"]
+        }
+      ]
+    },
+    {
+      "layout": "bh-title",
+      "title": "QUESTIONS?",
+      "subtitle": "@DinisCruz | The Cyber Boardroom | Akeia.ai"
+    }
+  ]
+}

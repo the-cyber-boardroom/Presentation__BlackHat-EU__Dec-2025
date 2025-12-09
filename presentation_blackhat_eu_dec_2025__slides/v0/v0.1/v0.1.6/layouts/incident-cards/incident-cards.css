@@ -1,0 +1,245 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Layout: Incident Cards (bh-incident-cards)
+   v0.1.6 - Visual incident/case study cards with color-coded labels
+   
+   Usage:
+   {
+     "layout": "bh-incident-cards",
+     "title": "SLIDE TITLE",
+     "items": [
+       { "label": "COMPANY", "text": "Description...", "color": "#FF9900" }
+     ],
+     "insight": "Key takeaway message..."
+   }
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Slide Container
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.theme-blackhat .bh-incident-cards-slide {
+    display: grid !important;
+    grid-template-rows: auto 1fr auto auto;
+    grid-template-areas:
+        "header"
+        "cards"
+        "insight"
+        "footer";
+    padding: 0 !important;
+    height: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Header - Reuse existing title styling
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.theme-blackhat .bh-incident-cards-slide .bh-heading {
+    grid-area: header;
+    padding: 50px 60px 0 105px !important;
+    margin: 0 60px 20px 0 !important;
+    font-size: clamp(32px, 5vw, 48px) !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.02em;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--bh-magenta);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Cards Grid
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.theme-blackhat .bh-incident-cards-grid {
+    grid-area: cards;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  /* Default: 2x2 grid */
+    gap: 30px 40px;
+    padding: 40px 80px;
+    align-items: stretch;
+}
+
+/* Individual Card */
+.theme-blackhat .bh-incident-card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.4);
+    border-left: 5px solid var(--card-color, #D81EBF);
+    border-radius: 4px;
+    padding: 25px 30px;
+    min-height: 100px;
+
+    /* Subtle shadow for depth */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+
+    /* Smooth hover (for web view) */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.theme-blackhat .bh-incident-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Card Label (Company Name) */
+.theme-blackhat .bh-incident-card-label {
+    font-size: clamp(20px, 2.5vw, 30px);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    margin-bottom: 15px;
+
+    /* Accent color underline */
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--card-color, #D81EBF);
+}
+
+/* Card Text (Description) */
+.theme-blackhat .bh-incident-card-text {
+    font-size: clamp(18px, 2.2vw, 24px);
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+    flex: 1;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Insight Banner
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.theme-blackhat .bh-incident-insight {
+    grid-area: insight;
+    margin: 10px 80px 30px 80px;
+    padding: 25px 35px;
+
+    /* Differentiated background */
+    background: linear-gradient(135deg, rgba(75, 124, 170, 0.15) 0%, rgba(216, 30, 191, 0.1) 100%);
+    border: 1px solid rgba(75, 124, 170, 0.3);
+    border-radius: 4px;
+
+    /* Typography - larger */
+    font-size: clamp(16px, 2vw, 20px);
+    font-style: italic;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.95);
+
+    /* Left accent */
+    border-left: 4px solid var(--bh-teal);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Footer - Logo
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.theme-blackhat .bh-incident-cards-slide .bh-corner-logo {
+    grid-area: footer;
+    position: relative !important;
+    justify-self: end;
+    align-self: end;
+    margin: 0 30px 20px 0;
+    bottom: auto !important;
+    right: auto !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Responsive: Stacked for Mobile
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 800px) {
+    .theme-blackhat .bh-incident-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 20px 40px;
+    }
+
+    .theme-blackhat .bh-incident-card {
+        min-height: auto;
+        padding: 18px 22px;
+    }
+
+    .theme-blackhat .bh-incident-insight {
+        margin: 10px 40px 20px 40px;
+        padding: 18px 24px;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Print Styles
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+@media print {
+    .theme-blackhat .bh-incident-cards-slide {
+        display: grid !important;
+        grid-template-rows: auto 1fr auto auto !important;
+    }
+
+    .theme-blackhat .bh-incident-cards-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 25px 35px !important;
+        padding: 30px 70px !important;
+    }
+
+    .theme-blackhat .bh-incident-card {
+        background: rgba(0, 0, 0, 0.5) !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        box-shadow: none !important;
+        padding: 20px 25px !important;
+    }
+
+    .theme-blackhat .bh-incident-card:hover {
+        transform: none !important;
+    }
+
+    .theme-blackhat .bh-incident-card-label {
+        font-size: 22px !important;
+    }
+
+    .theme-blackhat .bh-incident-card-text {
+        font-size: 18px !important;
+    }
+
+    .theme-blackhat .bh-incident-insight {
+        background: rgba(75, 124, 170, 0.1) !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        font-size: 20px !important;
+        margin: 10px 70px 25px 70px !important;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Variations: Grid layouts based on item count
+   Default is 2x2, variations for other counts
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* 2 items - side by side */
+.theme-blackhat .bh-incident-cards-grid[data-count="2"] {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* 3 items - single row */
+.theme-blackhat .bh-incident-cards-grid[data-count="3"] {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* 4 items - 2x2 grid (default, no override needed) */
+
+/* 5-6 items - 3 columns */
+.theme-blackhat .bh-incident-cards-grid[data-count="5"],
+.theme-blackhat .bh-incident-cards-grid[data-count="6"] {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 30px;
+}
+
+/* 5-6 items - smaller fonts to fit */
+.theme-blackhat .bh-incident-cards-grid[data-count="5"] .bh-incident-card-label,
+.theme-blackhat .bh-incident-cards-grid[data-count="6"] .bh-incident-card-label {
+    font-size: clamp(16px, 2vw, 22px);
+}
+
+.theme-blackhat .bh-incident-cards-grid[data-count="5"] .bh-incident-card-text,
+.theme-blackhat .bh-incident-cards-grid[data-count="6"] .bh-incident-card-text {
+    font-size: clamp(14px, 1.8vw, 18px);
+}
